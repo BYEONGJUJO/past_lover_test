@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔮 전생 연인 찾기 | AI 전생 분석 테스트</title>
-    <meta name="description" content="사진과 생년월일로 AI가 당신의 전생 연인을 찾아드립니다! 운명적인 인연을 발견해보세요">
-    <meta name="keywords" content="전생연인,운명의인연,전생테스트,AI점술,영혼메이트,전생분석,소울메이트">
+    <title>💕 전생 연인 찾기 | AI가 알려주는 나의 운명적 사랑</title>
+    <meta name="description" content="AI가 얼굴을 분석해 당신의 전생 연인을 찾아드립니다! 운명적인 사랑의 이야기를 확인해보세요.">
+    <meta name="keywords" content="전생연인,운명의사랑,소울메이트,AI연애테스트,무료테스트,전생분석,연애운">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="🔮 전생 연인 찾기 - AI가 찾아주는 운명의 인연">
-    <meta property="og:description" content="사진과 생년월일로 당신의 전생 연인을 찾아드립니다!">
-    <meta property="og:image" content="https://your-domain.com/pastlife-og.jpg">
+    <meta property="og:title" content="💕 전생 연인 찾기 - AI가 알려주는 운명적 사랑">
+    <meta property="og:description" content="AI가 당신의 전생 연인을 찾아드립니다!">
+    <meta property="og:image" content="https://your-domain.com/pastlover-og.jpg">
     <meta property="og:url" content="https://your-domain.com">
     
     <!-- 카카오 SDK -->
@@ -23,7 +23,7 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 50%, #FF6B6B 100%);
             min-height: 100vh;
             line-height: 1.6;
             position: relative;
@@ -37,15 +37,16 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="star" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:white;stop-opacity:0.8"/><stop offset="100%" style="stop-color:white;stop-opacity:0"/></radialGradient></defs><circle cx="20" cy="20" r="1" fill="url(%23star)"/><circle cx="80" cy="40" r="0.5" fill="url(%23star)"/><circle cx="60" cy="80" r="0.8" fill="url(%23star)"/><circle cx="30" cy="70" r="0.6" fill="url(%23star)"/><circle cx="90" cy="20" r="0.4" fill="url(%23star)"/></svg>') repeat;
-            animation: twinkle 8s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="heart" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:pink;stop-opacity:0.6"/><stop offset="100%" style="stop-color:pink;stop-opacity:0"/></radialGradient></defs><path d="M50,85 C50,85 20,60 20,40 C20,25 30,15 45,20 C50,10 55,10 55,20 C70,15 80,25 80,40 C80,60 50,85 50,85Z" fill="url(%23heart)"/></svg>') repeat;
+            background-size: 150px 150px;
+            animation: float-hearts 20s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
         }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.8; }
+        @keyframes float-hearts {
+            0%, 100% { opacity: 0.2; transform: translateY(0px); }
+            50% { opacity: 0.6; transform: translateY(-20px); }
         }
         
         .container {
@@ -64,12 +65,13 @@
             margin-bottom: 1rem;
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,182,193,0.3);
         }
         
         .header h1 {
             font-size: clamp(1.8rem, 4vw, 2.5rem);
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #FF69B4, #FFD700);
+            background: linear-gradient(135deg, #FF1744, #E91E63, #FF6B6B);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -92,12 +94,12 @@
         }
         
         .stat-item {
-            background: linear-gradient(45deg, #FFE0E6, #E8F5E8);
+            background: linear-gradient(45deg, #FFE0E6, #FFB6C1);
             padding: 0.5rem 1rem;
             border-radius: 25px;
             font-size: 0.9rem;
-            color: #666;
-            border: 1px solid rgba(255,192,203,0.3);
+            color: #C2185B;
+            font-weight: bold;
         }
         
         .upload-section {
@@ -114,45 +116,14 @@
         }
 
         .upload-section:hover {
-            border-color: #FF69B4;
-            background: rgba(255, 105, 180, 0.05);
+            border-color: #FF1744;
+            background: rgba(255, 23, 68, 0.05);
         }
 
         .upload-section.dragover {
-            border-color: #FF69B4 !important;
-            background: rgba(255, 105, 180, 0.1) !important;
+            border-color: #FF1744 !important;
+            background: rgba(255, 23, 68, 0.1) !important;
             transform: scale(1.02);
-        }
-
-        .input-section {
-            background: rgba(255,255,255,0.95);
-            padding: 1.5rem;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .birthdate-input {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .date-select {
-            padding: 0.8rem;
-            border: 2px solid #FFB6C1;
-            border-radius: 10px;
-            font-size: 1rem;
-            background: white;
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
-
-        .date-select:focus {
-            outline: none;
-            border-color: #FF69B4;
         }
         
         .file-input-wrapper {
@@ -166,7 +137,7 @@
         }
         
         .file-input-button {
-            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            background: linear-gradient(45deg, #FF1744, #E91E63);
             color: white;
             padding: 1rem 2rem;
             border-radius: 50px;
@@ -176,11 +147,12 @@
             transition: all 0.3s ease;
             display: inline-block;
             text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 23, 68, 0.3);
         }
         
         .file-input-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 23, 68, 0.4);
         }
         
         .preview-container {
@@ -194,10 +166,11 @@
             width: 100%;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 3px solid #FFB6C1;
         }
         
         .analyze-button {
-            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            background: linear-gradient(45deg, #FF1744, #E91E63);
             color: white;
             padding: 1rem 2rem;
             border: none;
@@ -207,18 +180,11 @@
             font-size: 1.1rem;
             font-weight: bold;
             transition: all 0.3s ease;
-            width: 100%;
-            max-width: 300px;
+            box-shadow: 0 4px 15px rgba(255, 23, 68, 0.3);
         }
         
         .analyze-button:hover {
             transform: scale(1.05);
-        }
-
-        .analyze-button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
         }
         
         .loading {
@@ -229,11 +195,12 @@
             border-radius: 20px;
             margin-bottom: 1rem;
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,182,193,0.3);
         }
         
         .spinner {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #FF69B4;
+            border-top: 4px solid #FF1744;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -255,16 +222,17 @@
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
             display: none;
             backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,182,193,0.3);
         }
         
         .lover-result {
-            background: linear-gradient(45deg, #FFE0E6, #E8F5E8, #FFF0F5);
+            background: linear-gradient(45deg, #FFE0E6, #FFCDD2, #F8BBD9);
             padding: 2rem 1.5rem;
             border-radius: 20px;
             margin: 1rem 0;
             position: relative;
             overflow: hidden;
-            border: 2px solid rgba(255,182,193,0.3);
+            border: 2px solid rgba(255,182,193,0.5);
         }
 
         .lover-result::before {
@@ -274,11 +242,11 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,192,203,0.3) 0%, transparent 70%);
-            animation: shimmer 4s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255,182,193,0.4) 0%, transparent 70%);
+            animation: romantic-shimmer 4s ease-in-out infinite;
         }
         
-        @keyframes shimmer {
+        @keyframes romantic-shimmer {
             0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
             50% { opacity: 0.8; transform: scale(1.1) rotate(180deg); }
         }
@@ -296,90 +264,106 @@
             50% { transform: translateY(-10px); }
         }
         
-        .lover-name {
+        .lover-title {
             font-size: clamp(1.5rem, 5vw, 2.2rem);
             margin: 1rem 0;
-            color: #FF1493;
+            color: #E91E63;
             font-weight: bold;
-            position: relative;
-            z-index: 1;
-        }
-
-        .lover-era {
-            font-size: 1.2rem;
-            color: #FF69B4;
-            margin: 0.5rem 0;
             position: relative;
             z-index: 1;
         }
         
         .love-story {
-            background: linear-gradient(45deg, #FFF0F5, #F0F8FF);
-            padding: 1.5rem;
-            border-radius: 15px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
             margin: 1rem 0;
-            text-align: left;
-            border: 1px solid rgba(255,182,193,0.3);
-        }
-
-        .love-story h3 {
-            color: #FF1493;
-            text-align: center;
-            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
         }
         
-        .compatibility-section {
-            background: linear-gradient(45deg, #E1F5FE, #FCE4EC);
+        .details-section {
+            background: linear-gradient(45deg, #F3E5F5, #FCE4EC, #FFF3E0);
             padding: 1.5rem;
             border-radius: 15px;
             margin: 1rem 0;
         }
         
-        .compatibility-grid {
+        .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
             margin: 1rem 0;
         }
         
-        .compatibility-item {
+        .detail-item {
             background: white;
             padding: 1rem;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            border: 1px solid rgba(255,182,193,0.2);
+            border: 1px solid rgba(255,182,193,0.3);
         }
 
-        .compatibility-item:hover {
+        .detail-item:hover {
             transform: translateY(-5px);
         }
         
-        .compatibility-emoji {
+        .detail-emoji {
             font-size: 2rem;
             margin-bottom: 0.5rem;
         }
         
-        .compatibility-title {
+        .detail-title {
             font-weight: bold;
-            color: #FF1493;
+            color: #E91E63;
             margin-bottom: 0.5rem;
         }
 
-        .compatibility-text {
+        .detail-text {
             font-size: 0.9rem;
             color: #666;
         }
-
-        .connection-score {
-            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
-            color: white;
-            padding: 1rem;
+        
+        .love-meter {
+            background: linear-gradient(45deg, #FFEBEE, #FCE4EC);
+            padding: 1.5rem;
             border-radius: 15px;
             margin: 1rem 0;
-            font-size: 1.5rem;
+        }
+
+        .love-score {
+            font-size: 2rem;
             font-weight: bold;
+            color: #E91E63;
+            margin: 0.5rem 0;
+        }
+
+        .love-bar {
+            background: #FFE0E6;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .love-fill {
+            background: linear-gradient(45deg, #FF1744, #E91E63);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 2s ease;
+            position: relative;
+        }
+
+        .love-fill::after {
+            content: '💖';
+            position: absolute;
+            right: -15px;
+            top: -5px;
+            font-size: 1.5rem;
+            animation: pulse 1s infinite;
         }
         
         .share-buttons {
@@ -429,7 +413,7 @@
         }
 
         .share-button.general {
-            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            background: linear-gradient(45deg, #FF1744, #E91E63);
         }
 
         #shareCanvas {
@@ -470,7 +454,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            background: linear-gradient(45deg, #FF1744, #E91E63);
             color: white;
             padding: 1rem;
             border-radius: 50px;
@@ -497,19 +481,18 @@
         }
 
         .footer a {
-            color: #FF69B4;
+            color: #E91E63;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            color: #FF1493;
+            color: #FF1744;
         }
         
         @media (max-width: 768px) {
             .container { padding: 5px; }
-            .compatibility-grid { grid-template-columns: repeat(2, 1fr); }
-            .birthdate-input { grid-template-columns: 1fr; }
+            .details-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -517,11 +500,11 @@
     <div class="container">
         <!-- 헤더 -->
         <div class="header">
-            <h1>🔮 전생 연인 찾기</h1>
-            <p>사진과 생년월일로 AI가 당신의 전생 연인을 찾아드립니다!</p>
+            <h1>💕 전생 연인 찾기</h1>
+            <p>AI가 당신의 얼굴을 분석해 운명적인 전생 연인을 찾아드립니다!</p>
             <div class="stats">
-                <span class="stat-item">💕 누적 분석 234,567명</span>
-                <span class="stat-item">🎯 정확도 94.2%</span>
+                <span class="stat-item">💖 누적 매칭 892,156명</span>
+                <span class="stat-item">💘 운명지수 98.3%</span>
                 <span class="stat-item">⭐ 만족도 97.8%</span>
             </div>
         </div>
@@ -529,9 +512,9 @@
         <!-- 업로드 섹션 -->
         <div class="upload-section" id="uploadSection">
             <h2>📸 얼굴 사진을 업로드하세요</h2>
-            <p>정면을 바라보는 선명한 셀카로 더 정확한 분석이 가능해요!</p>
+            <p>정면을 바라보는 셀카로 더 정확한 운명 분석이 가능해요!</p>
             <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
-                💖 클릭하거나 이미지를 드래그해서 업로드하세요
+                💕 클릭하거나 이미지를 드래그해서 업로드하세요
             </p>
             
             <div class="file-input-wrapper">
@@ -543,63 +526,46 @@
             
             <div class="preview-container" id="previewContainer" style="display: none;">
                 <img id="previewImage" class="preview-image" alt="미리보기">
+                <button onclick="analyzeImage()" class="analyze-button">
+                    💘 전생 연인 찾기!
+                </button>
+                <button onclick="resetUpload()" style="background: #6c757d; color: white; padding: 0.5rem 1rem; border: none; border-radius: 25px; margin-left: 1rem; cursor: pointer;">
+                    🔄 다시 선택
+                </button>
             </div>
-        </div>
-
-        <!-- 생년월일 입력 섹션 -->
-        <div class="input-section">
-            <h2>📅 생년월일을 입력하세요</h2>
-            <p>태어난 날짜가 전생의 인연을 찾는 중요한 단서가 됩니다</p>
-            
-            <div class="birthdate-input">
-                <select id="yearSelect" class="date-select">
-                    <option value="">년도 선택</option>
-                </select>
-                <select id="monthSelect" class="date-select">
-                    <option value="">월 선택</option>
-                </select>
-                <select id="daySelect" class="date-select">
-                    <option value="">일 선택</option>
-                </select>
-            </div>
-
-            <button onclick="analyzeImage()" class="analyze-button" id="analyzeBtn" disabled>
-                🔮 전생 연인 찾기
-            </button>
         </div>
         
         <!-- 로딩 -->
         <div class="loading" id="loading">
             <div class="spinner"></div>
             <h3>💕 AI가 당신의 전생 연인을 찾는 중...</h3>
-            <p>과거 생의 기억을 추적하고, 영혼의 인연을 분석하고 있습니다</p>
+            <p>수천 년의 시간을 거슬러 올라가며 운명적인 인연을 찾고 있습니다</p>
         </div>
         
         <!-- 결과 섹션 -->
         <div class="result-section" id="resultSection">
-            <h2>✨ 당신의 전생 연인 분석 결과</h2>
+            <h2>💖 당신의 전생 연인을 찾았습니다!</h2>
             
             <div class="lover-result">
-                <div class="lover-emoji" id="loverEmoji">👑</div>
-                <div class="lover-name" id="loverName">레오나르도 다 빈치</div>
-                <div class="lover-era" id="loverEra">르네상스 시대 (1452-1519)</div>
-                <p id="loverDescription">천재 예술가이자 발명가였던 레오나르도와 깊은 영혼의 인연이 있었습니다.</p>
-            </div>
-
-            <div class="connection-score" id="connectionScore">
-                💕 영혼 연결도: 97%
+                <div class="lover-emoji" id="loverEmoji">👸</div>
+                <div class="lover-title" id="loverTitle">프랑스 공주 마리</div>
+                <div class="love-story" id="loveStory">18세기 프랑스, 당신은 궁정의 기사였고 그녀는 아름다운 공주였습니다. 금지된 사랑이었지만 서로를 깊이 사랑했던 운명적인 인연이었어요.</div>
             </div>
             
-            <div class="love-story">
-                <h3>💖 당신들의 전생 사랑 이야기</h3>
-                <p id="loveStoryText">15세기 피렌체에서 당신은 레오나르도의 뮤즈였습니다. 그의 작업실에서 만난 첫 순간부터 서로에게 운명적으로 끌렸고, 그의 많은 작품에 당신의 모습이 숨겨져 있습니다. 비밀스럽지만 순수했던 당신들의 사랑은 예술을 통해 영원히 남겨졌습니다.</p>
-            </div>
-            
-            <div class="compatibility-section">
-                <h3>🌟 전생 인연 특징</h3>
-                <div class="compatibility-grid" id="compatibilityGrid">
+            <div class="details-section">
+                <h3>💕 전생 연인 정보</h3>
+                <div class="details-grid" id="detailsGrid">
                     <!-- JavaScript로 동적 생성 -->
                 </div>
+            </div>
+
+            <div class="love-meter">
+                <h3>💘 운명적 사랑 지수</h3>
+                <div class="love-score" id="loveScore">94%</div>
+                <div class="love-bar">
+                    <div class="love-fill" id="loveFill" style="width: 0%"></div>
+                </div>
+                <p id="loveAdvice">전생에서 이루지 못한 사랑이 현생에서 더욱 아름답게 꽃피울 것입니다!</p>
             </div>
             
             <div class="share-buttons">
@@ -611,48 +577,48 @@
             </div>
 
             <div style="margin-top: 1rem;">
-                <button class="share-button general" onclick="retakeTest()">🔄 다시 분석</button>
+                <button class="share-button general" onclick="retakeTest()">🔄 다시 테스트</button>
                 <button class="share-button general" onclick="saveResult()">💾 결과 저장</button>
             </div>
         </div>
         
         <!-- 연관 테스트 -->
         <div class="related-tests">
-            <h2>🌟 다른 신비한 AI 테스트</h2>
+            <h2>💕 다른 로맨틱한 AI 테스트</h2>
             <div class="test-grid">
-                <a href="#" class="test-card" target="_blank">
-                    <h3>💒 미래 결혼상대 예측</h3>
-                    <p>당신의 미래 배우자는 어떤 모습일까요?</p>
+                <a href="https://aura-test.site" class="test-card" target="_blank">
+                    <h3>🔮 오라 색상 테스트</h3>
+                    <p>당신만의 오라 색상을 발견해보세요</p>
                 </a>
-                <a href="#" class="test-card" target="_blank">
-                    <h3>💕 연애 운세 분석</h3>
-                    <p>올해 당신의 연애운을 확인해보세요</p>
+                <a href="https://animal-test.site" class="test-card" target="_blank">
+                    <h3>🐾 동물상 궁합 테스트</h3>
+                    <p>나와 어울리는 동물상을 찾아보세요</p>
                 </a>
-                <a href="https://www.mymoviecharacter.site" class="test-card" target="_blank">
-                    <h3>🎬 닮은 영화 캐릭터</h3>
-                    <p>어떤 영화 주인공과 닮았을까요?</p>
+                <a href="https://soulmate-test.site" class="test-card" target="_blank">
+                    <h3>💝 소울메이트 찾기</h3>
+                    <p>운명의 반쪽을 찾아보세요</p>
                 </a>
             </div>
         </div>
 
         <!-- 푸터 -->
         <div class="footer">
-            <h3>🔮 전생 연인 찾기 테스트</h3>
-            <p>모든 인연은 소중해요! 💕</p>
+            <h3>💕 전생 연인 찾기</h3>
+            <p>모든 사랑이 아름다워요! 💖</p>
             <div style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
                 <a href="contact.html">문의하기</a> | 
                 <a href="privacy.html">개인정보처리방침</a> | 
                 <a href="terms.html">이용약관</a>
             </div>
             <p style="margin-top: 1rem; color: #999; font-size: 0.8rem;">
-                © 2025 전생 연인 찾기 테스트. All rights reserved.
+                © 2025 전생 연인 찾기. All rights reserved.
             </p>
         </div>
     </div>
     
     <!-- 플로팅 CTA -->
     <div class="floating-cta" onclick="scrollToUpload()">
-        💕 분석하기
+        💕 테스트하기
     </div>
 
     <!-- 숨겨진 캔버스 (공유 이미지 생성용) -->
@@ -661,236 +627,327 @@
     <script>
         // 카카오 SDK 초기화 (실제 앱 키로 교체 필요)
         if (typeof Kakao !== 'undefined') {
-            Kakao.init('YOUR_KAKAO_APP_KEY'); // 실제 카카오 앱 키로 교체해야 합니다
+            Kakao.init('280f75c15c2b9af2a9836abb0c42e8f5'); // 실제 카카오 앱 키로 교체해야 합니다
         }
 
-        // 전생 연인 데이터
-        const pastLifeLoverData = [
+        // 전생 연인 데이터 (남성/여성 균형)
+        const pastLoverData = [
+            // 남성 연인들
             {
-                emoji: "👑",
-                name: "레오나르도 다 빈치",
-                era: "르네상스 시대 (1452-1519)",
-                desc: "천재 예술가이자 발명가였던 레오나르도와 깊은 영혼의 인연이 있었습니다.",
-                story: "15세기 피렌체에서 당신은 레오나르도의 뮤즈였습니다. 그의 작업실에서 만난 첫 순간부터 서로에게 운명적으로 끌렸고, 그의 많은 작품에 당신의 모습이 숨겨져 있습니다. 비밀스럽지만 순수했던 당신들의 사랑은 예술을 통해 영원히 남겨졌습니다.",
-                compatibility: [
-                    {emoji: "🎨", title: "예술적 영감", text: "창조적 에너지 공유"},
-                    {emoji: "🧠", title: "지적 교감", text: "깊은 철학적 대화"},
-                    {emoji: "🌟", title: "영혼의 공명", text: "완벽한 정신적 일치"},
-                    {emoji: "💎", title: "영원한 사랑", text: "시대를 초월한 인연"}
+                emoji: "🤴",
+                name: "이집트 파라오 아멘호테프",
+                story: "고대 이집트, 당신은 신전의 무희였고 그는 위대한 파라오였습니다. 계급을 뛰어넘은 순수한 사랑으로 영원히 기억될 인연이었어요.",
+                details: [
+                    {emoji: "🏺", title: "만난 장소", text: "룩소르 신전"},
+                    {emoji: "💫", title: "첫 만남", text: "신에게 바치는 춤"},
+                    {emoji: "🪙", title: "사랑의 상징", text: "황금 목걸이"},
+                    {emoji: "📜", title: "맹세", text: "내세에서의 재회"}
                 ],
-                connection: 97
-            },
-            {
-                emoji: "⚔️",
-                name: "아서 왕",
-                era: "중세 아서왕 전설 (5-6세기)",
-                desc: "전설의 원탁 기사단을 이끈 아서 왕과 숭고한 사랑을 나누었습니다.",
-                story: "캐멀롯 성에서 당신은 아서 왕의 가장 신뢰받는 조언자이자 비밀스러운 연인이었습니다. 왕국의 평화를 위해 숨겨야 했던 사랑이지만, 서로를 향한 마음은 그 어떤 시련보다 강했습니다. 당신의 지혜는 왕국을 번영으로 이끌었고, 두 사람의 사랑은 전설이 되었습니다.",
-                compatibility: [
-                    {emoji: "👑", title: "고귀한 품격", text: "왕족다운 기품과 위엄"},
-                    {emoji: "⚔️", title: "용기와 의리", text: "정의를 위한 강인함"},
-                    {emoji: "🛡️", title: "보호본능", text: "사랑하는 이를 지키는 마음"},
-                    {emoji: "🌟", title: "숭고한 사랑", text: "이상적이고 순수한 연애"}
-                ],
-                connection: 95
-            },
-            {
-                emoji: "🌸",
-                name: "무라사키 시키부",
-                era: "헤이안 시대 일본 (973-1014)",
-                desc: "일본 최고의 여류 작가 무라사키 시키부와 문학적 영혼을 나누었습니다.",
-                story: "헤이안 시대 교토에서 당신은 무라사키 시키부의 문학적 동반자였습니다. 달빛 아래 정원에서 시를 읽으며 마음을 나누었고, 그녀의 대작 '겐지 이야기'에는 당신과의 추억이 많이 담겨있습니다. 우아하고 섬세한 사랑이었지만, 당시 사회의 제약으로 인해 은밀할 수밖에 없었던 아름다운 인연이었습니다.",
-                compatibility: [
-                    {emoji: "📚", title: "문학적 교감", text: "시와 소설을 통한 소통"},
-                    {emoji: "🌙", title: "섬세한 감성", text: "달빛 같은 우아한 정서"},
-                    {emoji: "🌸", title: "일본적 미학", text: "와비사비의 아름다움"},
-                    {emoji: "💌", title: "편지 사랑", text: "글로 전하는 깊은 마음"}
-                ],
-                connection: 94
-            },
-            {
-                emoji: "🏺",
-                name: "클레오파트라 7세",
-                era: "고대 이집트 (69-30 BC)",
-                desc: "이집트 최후의 여왕 클레오파트라와 열정적인 사랑을 나누었습니다.",
-                story: "나일강이 흐르는 알렉산드리아에서 당신은 클레오파트라의 가장 가까운 심복이자 연인이었습니다. 그녀의 지혜와 아름다움에 매료되었고, 함께 이집트의 황금기를 만들어갔습니다. 로마의 침입에 맞서 싸우며 서로를 의지했던 그 시절, 두 사람의 사랑은 역사를 움직일 만큼 강렬했습니다.",
-                compatibility: [
-                    {emoji: "👑", title: "권력과 카리스마", text: "강인한 리더십과 매력"},
-                    {emoji: "🌟", title: "지적 매력", text: "7개 언어를 구사하는 지성"},
-                    {emoji: "💎", title: "럭셔리 취향", text: "화려하고 세련된 미학"},
-                    {emoji: "🔥", title: "열정적 사랑", text: "불타는 듯한 로맨스"}
-                ],
-                connection: 96
-            },
-            {
-                emoji: "🎭",
-                name: "윌리엄 셰익스피어",
-                era: "엘리자베스 시대 (1564-1616)",
-                desc: "영국 최고의 극작가 셰익스피어와 창작의 영감을 나누었습니다.",
-                story: "16세기 런던의 글로브 극장에서 당신은 셰익스피어의 뮤즈이자 비밀스러운 연인이었습니다. 그의 소네트들은 대부분 당신에게 바친 사랑의 고백이었고, '로미오와 줄리엣'의 영감도 당신들의 사랑에서 나왔습니다. 사회적 신분 차이로 공개할 수 없었던 사랑이지만, 그 순수함은 영원한 문학으로 남았습니다.",
-                compatibility: [
-                    {emoji: "🎭", title: "연극적 로맨스", text: "드라마틱한 사랑 표현"},
-                    {emoji: "📝", title: "문학적 소통", text: "아름다운 언어로 마음 전달"},
-                    {emoji: "🌹", title: "낭만적 정서", text: "장미처럼 아름다운 사랑"},
-                    {emoji: "⭐", title: "예술혼", text: "창작을 통한 영혼의 만남"}
-                ],
-                connection: 93
-            },
-            {
-                emoji: "🎼",
-                name: "볼프강 아마데우스 모차르트",
-                era: "고전주의 시대 (1756-1791)",
-                desc: "천재 음악가 모차르트와 음악으로 연결된 아름다운 인연이 있었습니다.",
-                story: "18세기 빈의 음악 살롱에서 당신은 모차르트의 영감의 원천이었습니다. 그가 연주하는 피아노 선율에 맞춰 당신이 노래하던 순간들은 천상의 화음 같았습니다. 그의 많은 곡들, 특히 사랑 노래들은 당신을 생각하며 작곡한 것들이었습니다. 짧았지만 찬란했던 사랑은 불멸의 음악으로 남았습니다.",
-                compatibility: [
-                    {emoji: "🎵", title: "음악적 조화", text: "완벽한 하모니와 리듬"},
-                    {emoji: "✨", title: "천재적 교감", text: "비범한 재능의 공명"},
-                    {emoji: "🎭", title: "오페라틱 로맨스", text: "극적이고 아름다운 사랑"},
-                    {emoji: "💫", title: "짧고 강렬함", text: "별똥별 같은 운명적 만남"}
-                ],
-                connection: 92
-            },
-            {
-                emoji: "🌊",
-                name: "마르코 폴로",
-                era: "중세 말기 (1254-1324)",
-                desc: "위대한 탐험가 마르코 폴로와 모험으로 가득한 로맨스를 경험했습니다.",
-                story: "실크로드를 따라 여행하던 중 당신은 마르코 폴로의 동반자가 되었습니다. 베니스에서 중국까지, 수많은 위험과 신비로운 경험을 함께하며 깊은 사랑에 빠졌습니다. 쿠빌라이 칸의 궁정에서 보낸 시간들과 돌아오는 바닷길에서의 추억들은 두 사람만의 특별한 보물이었습니다.",
-                compatibility: [
-                    {emoji: "🗺️", title: "모험정신", text: "새로운 세계를 향한 호기심"},
-                    {emoji: "🚢", title: "여행자 기질", text: "자유롭고 역동적인 삶"},
-                    {emoji: "💎", title: "이국적 매력", text: "다양한 문화에 대한 이해"},
-                    {emoji: "🌟", title: "운명적 만남", text: "우연 같은 필연의 인연"}
-                ],
-                connection: 90
-            },
-            {
-                emoji: "🌹",
-                name: "나폴레옹 보나파르트",
-                era: "나폴레옹 시대 (1769-1821)",
-                desc: "프랑스 황제 나폴레옹과 격정적이고 파란만장한 사랑을 나누었습니다.",
-                story: "혁명의 시대 파리에서 당신은 나폴레옹의 마음을 사로잡은 유일한 여인이었습니다. 전쟁터에서도 당신에게 보내는 열정적인 편지를 썼고, 승리 후에는 항상 당신 곁으로 돌아왔습니다. 권력의 정점에서도 변치 않는 사랑을 보여준 당신들의 관계는 역사상 가장 로맨틱한 사랑 중 하나였습니다.",
-                compatibility: [
-                    {emoji: "👑", title: "제국의 로맨스", text: "웅대한 스케일의 사랑"},
-                    {emoji: "⚔️", title: "영웅적 기질", text: "강인하고 카리스마틱함"},
-                    {emoji: "💌", title: "열정적 표현", text: "불타는 듯한 사랑 고백"},
-                    {emoji: "🌟", title: "역사적 인연", text: "시대를 초월한 전설적 사랑"}
-                ],
-                connection: 89
+                loveScore: 96,
+                advice: "영원한 사랑의 맹세가 현생에서도 계속되고 있습니다!"
             },
             {
                 emoji: "🎨",
-                name: "빈센트 반 고흐",
-                era: "후기 인상주의 (1853-1890)",
-                desc: "열정적인 화가 반 고흐와 예술혼으로 연결된 깊은 사랑이 있었습니다.",
-                story: "프랑스 남부 아를에서 당신은 고흐의 유일한 위로이자 영감이었습니다. 그의 그림 '별이 빛나는 밤'을 함께 바라보며 꿈을 나누었고, 해바라기 밭에서 함께 웃던 그 시간들이 그의 작품에 고스란히 담겨있습니다. 세상이 이해하지 못한 그의 예술을 당신만은 알아주었고, 그 사랑이 그를 계속 그리게 했습니다.",
-                compatibility: [
-                    {emoji: "🎨", title: "예술적 감성", text: "깊은 미적 공감대"},
-                    {emoji: "🌻", title: "순수한 마음", text: "해바라기 같은 맑은 사랑"},
-                    {emoji: "⭐", title: "꿈과 이상", text: "별을 바라보는 로맨틱함"},
-                    {emoji: "💛", title: "무조건적 사랑", text: "모든 것을 이해하고 받아주는 마음"}
+                name: "르네상스 화가 레오나르도",
+                story: "15세기 이탈리아, 당신은 귀족의 딸이었고 그는 천재적인 화가였습니다. 예술에 대한 열정과 서로에 대한 사랑이 하나가 된 아름다운 인연이었어요.",
+                details: [
+                    {emoji: "🎨", title: "만난 장소", text: "피렌체 아틀리에"},
+                    {emoji: "🖼️", title: "첫 만남", text: "초상화 모델"},
+                    {emoji: "🌻", title: "사랑의 상징", text: "해바라기 그림"},
+                    {emoji: "✍️", title: "약속", text: "서로의 뮤즈"}
                 ],
-                connection: 94
+                loveScore: 95,
+                advice: "창조적인 영감을 주는 사랑이 현생에서도 이어질 것입니다!"
             },
             {
-                emoji: "🌙",
-                name: "이백 (李白)",
-                era: "당나라 성당시대 (701-762)",
-                desc: "중국 최고의 시인 이백과 달빛 아래 시로 사랑을 나누었습니다.",
-                story: "당나라 장안에서 당신은 이백의 시적 영감이자 마음의 벗이었습니다. 달밤에 배를 타고 강을 건너며 즉석에서 시를 주고받았고, 술잔을 기울이며 철학과 사랑을 논했습니다. '정야사(靜夜思)'를 비롯한 그의 많은 명작들에는 당신과의 추억이 스며있습니다. 자유롭고 초월적인 사랑이었습니다.",
-                compatibility: [
-                    {emoji: "🌙", title: "달빛 로맨스", text: "시적이고 몽환적인 사랑"},
-                    {emoji: "📜", title: "문학적 교감", text: "시로 나누는 깊은 대화"},
-                    {emoji: "🍷", title: "풍류와 여유", text: "술과 시가 있는 삶"},
-                    {emoji: "🌟", title: "자유로운 영혼", text: "세속을 초월한 만남"}
+                emoji: "🧙‍♂️",
+                name: "켈트족 드루이드 아서",
+                story: "고대 아일랜드, 당신은 치유사였고 그는 신비로운 드루이드였습니다. 자연의 힘과 고대 마법이 맺어준 운명적인 사랑이었어요.",
+                details: [
+                    {emoji: "🌿", title: "만난 장소", text: "신성한 숲"},
+                    {emoji: "🌙", title: "첫 만남", text: "달빛 의식"},
+                    {emoji: "🔮", title: "사랑의 상징", text: "마법의 돌"},
+                    {emoji: "✨", title: "맹세", text: "영원한 수호"}
                 ],
-                connection: 91
+                loveScore: 98,
+                advice: "마법 같은 사랑이 현생에서도 당신을 기다리고 있습니다!"
+            },
+            {
+                emoji: "⚔️",
+                name: "일본 사무라이 타케시",
+                story: "16세기 일본, 당신은 대명의 딸이었고 그는 명예로운 사무라이였습니다. 검과 충의로 맺어진 무사의 사랑이었어요.",
+                details: [
+                    {emoji: "🏯", title: "만난 장소", text: "교토 대나무 숲"},
+                    {emoji: "🌸", title: "첫 만남", text: "벚꽃 축제"},
+                    {emoji: "⚔️", title: "사랑의 상징", text: "가문의 칼"},
+                    {emoji: "🎋", title: "맹세", text: "대나무 잎 서약"}
+                ],
+                loveScore: 93,
+                advice: "명예로운 사랑의 정신이 현생에서도 빛날 것입니다!"
+            },
+            {
+                emoji: "🏛️",
+                name: "그리스 철학자 알렉산드로스",
+                story: "고대 그리스, 당신은 귀족 여성이었고 그는 지혜로운 철학자였습니다. 지혜와 아름다움이 만난 이상적인 사랑 이야기였어요.",
+                details: [
+                    {emoji: "🏛️", title: "만난 장소", text: "아테네 아고라"},
+                    {emoji: "📚", title: "첫 만남", text: "철학 토론"},
+                    {emoji: "🏺", title: "사랑의 상징", text: "올리브 관"},
+                    {emoji: "💭", title: "약속", text: "지혜의 공유"}
+                ],
+                loveScore: 89,
+                advice: "깊은 정신적 교감이 현생에서도 소중한 인연을 만들어줄 것입니다!"
             },
             {
                 emoji: "🦅",
-                name: "칭기즈 칸",
-                era: "몽골 제국 (1162-1227)",
-                desc: "몽골 대제국을 건설한 칭기즈 칸과 초원에서의 운명적 만남이 있었습니다.",
-                story: "끝없는 몽골 대초원에서 당신은 칭기즈 칸의 마음을 움직인 유일한 여인이었습니다. 말을 타고 초원을 달리며 자유로움을 만끽했고, 밤하늘의 별들 아래서 제국의 꿈을 함께 키웠습니다. 거친 전사였던 그가 당신 앞에서만은 부드러운 남자가 되었던 그 시절의 사랑은 전설이 되었습니다.",
-                compatibility: [
-                    {emoji: "🐎", title: "자유로운 기상", text: "초원을 달리는 야생의 혼"},
-                    {emoji: "⭐", title: "웅대한 꿈", text: "세계를 품는 큰 비전"},
-                    {emoji: "🏹", title: "강인한 의지", text: "목표를 향한 불굴의 정신"},
-                    {emoji: "🌟", title: "제국의 사랑", text: "역사를 움직인 거대한 인연"}
+                name: "아즈텍 전사 이츨코아틀",
+                story: "15세기 멕시코, 당신은 신관의 딸이었고 그는 용맹한 독수리 전사였습니다. 신들의 축복을 받은 신성한 사랑이었어요.",
+                details: [
+                    {emoji: "🏛️", title: "만난 장소", text: "테노치티틀란 신전"},
+                    {emoji: "🌅", title: "첫 만남", text: "태양 의식"},
+                    {emoji: "🦅", title: "사랑의 상징", text: "독수리 깃털"},
+                    {emoji: "🔥", title: "맹세", text: "태양신 앞의 서약"}
                 ],
-                connection: 88
+                loveScore: 94,
+                advice: "용맹하고 신성한 사랑이 현생에서도 당신을 보호할 것입니다!"
+            },
+            {
+                emoji: "🧙‍♂️",
+                name: "중세 연금술사 니콜라스",
+                story: "중세 유럽, 당신은 수녀였고 그는 비밀스러운 연금술사였습니다. 금지된 지식과 함께 시작된 운명적인 사랑이었어요.",
+                details: [
+                    {emoji: "🏰", title: "만난 장소", text: "수도원 도서관"},
+                    {emoji: "📜", title: "첫 만남", text: "고대 서적 연구"},
+                    {emoji: "🌟", title: "사랑의 상징", text: "별자리 지도"},
+                    {emoji: "⚗️", title: "비밀", text: "사랑의 비약"}
+                ],
+                loveScore: 95,
+                advice: "신비로운 인연이 현생에서도 특별한 만남을 가져다줄 것입니다!"
+            },
+            {
+                emoji: "🏴‍☠️",
+                name: "바이킹 족장 에이나르",
+                story: "9세기 스칸디나비아, 당신은 마을의 현명녀였고 그는 용맹한 바이킹 족장이었습니다. 바다와 같이 거친 하지만 뜨거운 사랑이었어요.",
+                details: [
+                    {emoji: "⛵", title: "만난 장소", text: "노르웨이 피오르드"},
+                    {emoji: "🗡️", title: "첫 만남", text: "전투 후 치료"},
+                    {emoji: "🔨", title: "사랑의 상징", text: "토르의 망치"},
+                    {emoji: "⚔️", title: "맹세", text: "발할라에서의 재회"}
+                ],
+                loveScore: 97,
+                advice: "용감하고 정열적인 사랑이 현생에서도 당신의 마음을 뜨겁게 할 것입니다!"
             },
             {
                 emoji: "📚",
-                name: "공자 (孔子)",
-                era: "춘추시대 (551-479 BC)",
-                desc: "위대한 사상가 공자와 지혜로운 사랑을 나누었습니다.",
-                story: "춘추시대 노나라에서 당신은 공자의 가장 뛰어난 제자이자 마음의 동반자였습니다. 학문을 논하고 인생의 도리를 탐구하는 과정에서 서로에게 깊이 끌렸습니다. 비록 스승과 제자라는 관계로 인해 공개적으로 드러낼 수 없었지만, 서로를 향한 존경과 사랑은 진리를 추구하는 길에서 더욱 깊어졌습니다.",
-                compatibility: [
-                    {emoji: "📖", title: "학문적 교감", text: "지혜를 나누는 깊은 소통"},
-                    {emoji: "⚖️", title: "도덕적 사랑", text: "올바른 길을 함께 걷는 마음"},
-                    {emoji: "🌟", title: "정신적 일치", text: "영혼의 완벽한 공명"},
-                    {emoji: "🎋", title: "군자의 사랑", text: "품격 있고 고상한 인연"}
+                name: "조선 선비 이도령",
+                story: "조선 후기, 당신은 기생이었고 그는 재능 있는 선비였습니다. 신분을 뛰어넘어 시와 글로 마음을 나눈 애절한 사랑이었어요.",
+                details: [
+                    {emoji: "🏮", title: "만난 장소", text: "한양 기방"},
+                    {emoji: "🌙", title: "첫 만남", text: "달밤 시회"},
+                    {emoji: "🎋", title: "사랑의 상징", text: "매화시"},
+                    {emoji: "📝", title: "약속", text: "시 교환"}
                 ],
-                connection: 87
+                loveScore: 90,
+                advice: "우아하고 깊이 있는 사랑이 현생에서도 아름답게 이어질 것입니다!"
             },
             {
-                emoji: "🕌",
-                name: "살라딘",
-                era: "십자군 전쟁 시대 (1137-1193)",
-                desc: "이슬람의 영웅 살라딘과 종교를 초월한 숭고한 사랑을 나누었습니다.",
-                story: "십자군 전쟁의 격동기 예루살렘에서 당신은 살라딘의 마음을 사로잡은 여인이었습니다. 종교와 문화의 차이를 뛰어넘어 서로를 이해하고 사랑했습니다. 그의 관용과 지혜에 감동받았고, 당신의 순수함이 그의 마음을 평화롭게 만들었습니다. 전쟁 중에도 변치 않았던 사랑은 평화의 상징이었습니다.",
-                compatibility: [
-                    {emoji: "☮️", title: "평화로운 사랑", text: "갈등을 치유하는 포용력"},
-                    {emoji: "🌙", title: "이슬람 문화", text: "신비롭고 깊이 있는 정신세계"},
-                    {emoji: "⚔️", title: "기사도 정신", text: "명예롭고 고결한 마음"},
-                    {emoji: "🕊️", title: "종교 초월", text: "사랑으로 하나 된 영혼"}
+                emoji: "🌟",
+                name: "아랍 수학자 알-카림",
+                story: "황금시대 바그다드, 당신은 의사였고 그는 뛰어난 수학자였습니다. 별을 보며 나눈 지적인 사랑이 영원히 빛나고 있어요.",
+                details: [
+                    {emoji: "🏛️", title: "만난 장소", text: "지혜의 집"},
+                    {emoji: "⭐", title: "첫 만남", text: "천체 관측"},
+                    {emoji: "🌟", title: "사랑의 상징", text: "북극성"},
+                    {emoji: "📐", title: "약속", text: "학문적 동반자"}
                 ],
-                connection: 86
+                loveScore: 94,
+                advice: "무한한 우주처럼 깊은 사랑이 현생에서도 당신을 이끌어줄 것입니다!"
+            },
+            {
+                emoji: "🎸",
+                name: "스페인 음악가 안토니오",
+                story: "19세기 안달루시아, 당신은 백작가의 딸이었고 그는 정열적인 기타리스트였습니다. 음악과 춤이 만든 뜨거운 사랑이었어요.",
+                details: [
+                    {emoji: "🎸", title: "만난 장소", text: "세비야 음악당"},
+                    {emoji: "🎵", title: "첫 만남", text: "즉흥 연주"},
+                    {emoji: "🌹", title: "사랑의 상징", text: "붉은 장미"},
+                    {emoji: "💃", title: "약속", text: "영원한 듀엣"}
+                ],
+                loveScore: 96,
+                advice: "정열적이고 역동적인 사랑이 현생에서도 당신의 삶을 풍요롭게 할 것입니다!"
+            },
+            {
+                emoji: "🧜‍♂️",
+                name: "바다의 왕자 포세이돈",
+                story: "전설 속 바다, 당신은 어부의 딸이었고 그는 신비로운 바다의 왕자였습니다. 육지와 바다를 넘나드는 판타지 같은 사랑이었어요.",
+                details: [
+                    {emoji: "🌊", title: "만난 장소", text: "신비한 해저 궁전"},
+                    {emoji: "🌙", title: "첫 만남", text: "달빛 아래 바다"},
+                    {emoji: "🔱", title: "사랑의 상징", text: "삼지창"},
+                    {emoji: "⚓", title: "약속", text: "바다의 맹세"}
+                ],
+                loveScore: 100,
+                advice: "환상적이고 순수한 사랑이 현생에서도 당신에게 기적을 선사할 것입니다!"
+            },
+            
+            // 여성 연인들
+            {
+                emoji: "👸",
+                name: "프랑스 공주 마리",
+                story: "18세기 프랑스, 당신은 궁정의 기사였고 그녀는 아름다운 공주였습니다. 금지된 사랑이었지만 서로를 깊이 사랑했던 운명적인 인연이었어요.",
+                details: [
+                    {emoji: "🏰", title: "만난 장소", text: "베르사유 궁전"},
+                    {emoji: "💃", title: "첫 만남", text: "궁정 무도회"},
+                    {emoji: "🌹", title: "사랑의 상징", text: "빨간 장미"},
+                    {emoji: "💌", title: "비밀 연락", text: "편지 교환"}
+                ],
+                loveScore: 94,
+                advice: "전생에서 이루지 못한 사랑이 현생에서 더욱 아름답게 꽃피울 것입니다!"
+            },
+            {
+                emoji: "👩‍🎨",
+                name: "르네상스 화가 루크레치아",
+                story: "15세기 이탈리아, 당신은 젊은 조각가였고 그녀는 재능 있는 화가였습니다. 예술에 대한 열정과 서로에 대한 사랑이 하나가 된 아름다운 인연이었어요.",
+                details: [
+                    {emoji: "🎨", title: "만난 장소", text: "피렌체 아틀리에"},
+                    {emoji: "🖼️", title: "첫 만남", text: "그림 모델"},
+                    {emoji: "🌻", title: "사랑의 상징", text: "해바라기"},
+                    {emoji: "✍️", title: "약속", text: "서로의 뮤즈"}
+                ],
+                loveScore: 91,
+                advice: "창조적인 영감을 주는 사랑이 현생에서도 이어질 것입니다!"
+            },
+            {
+                emoji: "🧚‍♀️",
+                name: "켈트족 요정 아오이페",
+                story: "고대 아일랜드, 당신은 용감한 전사였고 그녀는 신비로운 요정이었습니다. 인간과 요정의 금지된 사랑으로 전설이 된 인연이었어요.",
+                details: [
+                    {emoji: "🌿", title: "만난 장소", text: "신비한 숲"},
+                    {emoji: "🌙", title: "첫 만남", text: "달빛 아래"},
+                    {emoji: "🔮", title: "사랑의 상징", text: "마법의 돌"},
+                    {emoji: "✨", title: "맹세", text: "영원한 수호"}
+                ],
+                loveScore: 98,
+                advice: "마법 같은 사랑이 현생에서도 당신을 기다리고 있습니다!"
+            },
+            {
+                emoji: "🏹",
+                name: "일본 사무라이 유키코",
+                story: "16세기 일본, 당신은 떠돌이 무사였고 그녀는 명문가의 딸이자 뛰어난 궁술가였습니다. 검과 활로 맺어진 무사의 사랑이었어요.",
+                details: [
+                    {emoji: "🏯", title: "만난 장소", text: "교토 대나무 숲"},
+                    {emoji: "🌸", title: "첫 만남", text: "벚꽃 축제"},
+                    {emoji: "🎋", title: "사랑의 상징", text: "대나무 잎"},
+                    {emoji: "⚔️", title: "맹세", text: "칼끝에 새긴 약속"}
+                ],
+                loveScore: 93,
+                advice: "명예로운 사랑의 정신이 현생에서도 빛날 것입니다!"
+            },
+            {
+                emoji: "🎭",
+                name: "그리스 배우 칼리오페",
+                story: "고대 그리스, 당신은 철학자였고 그녀는 유명한 연극 배우였습니다. 지혜와 예술이 만난 아름다운 사랑 이야기였어요.",
+                details: [
+                    {emoji: "🏛️", title: "만난 장소", text: "아테네 극장"},
+                    {emoji: "🎪", title: "첫 만남", text: "비극 공연"},
+                    {emoji: "🏺", title: "사랑의 상징", text: "올리브 관"},
+                    {emoji: "📚", title: "약속", text: "지혜의 공유"}
+                ],
+                loveScore: 89,
+                advice: "깊은 정신적 교감이 현생에서도 소중한 인연을 만들어줄 것입니다!"
+            },
+            {
+                emoji: "👸🏾",
+                name: "누비아 여왕 칸다케",
+                story: "고대 누비아, 당신은 이집트에서 온 학자였고 그녀는 지혜로운 여왕이었습니다. 서로 다른 문화를 이해하며 깊어진 사랑이었어요.",
+                details: [
+                    {emoji: "🏜️", title: "만난 장소", text: "나일강 상류"},
+                    {emoji: "📖", title: "첫 만남", text: "고문서 연구"},
+                    {emoji: "💎", title: "사랑의 상징", text: "누비아 보석"},
+                    {emoji: "🌍", title: "약속", text: "문화 교류"}
+                ],
+                loveScore: 92,
+                advice: "서로를 이해하는 깊은 사랑이 현생에서도 지속될 것입니다!"
+            },
+            {
+                emoji: "🧙‍♀️",
+                name: "중세 연금술사 엘리노어",
+                story: "중세 유럽, 당신은 수도사였고 그녀는 비밀스러운 연금술사였습니다. 금지된 지식과 함께 시작된 운명적인 사랑이었어요.",
+                details: [
+                    {emoji: "🏰", title: "만난 장소", text: "수도원 도서관"},
+                    {emoji: "📜", title: "첫 만남", text: "고대 서적 연구"},
+                    {emoji: "🌟", title: "사랑의 상징", text: "별자리 지도"},
+                    {emoji: "⚗️", title: "비밀", text: "사랑의 비약"}
+                ],
+                loveScore: 95,
+                advice: "신비로운 인연이 현생에서도 특별한 만남을 가져다줄 것입니다!"
+            },
+            {
+                emoji: "🌺",
+                name: "하와이 족장 딸 레일라니",
+                story: "18세기 하와이, 당신은 탐험가였고 그녀는 족장의 아름다운 딸이었습니다. 바다와 하늘처럼 넓은 마음으로 사랑했던 인연이었어요.",
+                details: [
+                    {emoji: "🏝️", title: "만난 장소", text: "마우이 해변"},
+                    {emoji: "🌊", title: "첫 만남", text: "일몰 감상"},
+                    {emoji: "🌺", title: "사랑의 상징", text: "히비스커스"},
+                    {emoji: "🐚", title: "약속", text: "조개껍질 목걸이"}
+                ],
+                loveScore: 88,
+                advice: "자유롭고 순수한 사랑이 현생에서도 당신을 행복하게 할 것입니다!"
+            },
+            {
+                emoji: "👑",
+                name: "바이킹 여전사 브린힐드",
+                story: "9세기 스칸디나비아, 당신은 음유시인이었고 그녀는 용맹한 여전사였습니다. 시와 칼날이 만난 거친 하지만 뜨거운 사랑이었어요.",
+                details: [
+                    {emoji: "⛵", title: "만난 장소", text: "노르웨이 피오르드"},
+                    {emoji: "🎵", title: "첫 만남", text: "서사시 낭송"},
+                    {emoji: "🗡️", title: "사랑의 상징", text: "신성한 검"},
+                    {emoji: "⚔️", title: "맹세", text: "발할라에서의 재회"}
+                ],
+                loveScore: 97,
+                advice: "용감하고 정열적인 사랑이 현생에서도 당신의 마음을 뜨겁게 할 것입니다!"
+            },
+            {
+                emoji: "🌸",
+                name: "일본 게이샤 하나코",
+                story: "에도시대 일본, 당신은 상인이었고 그녀는 교양 높은 게이샤였습니다. 절제된 아름다움 속에서 피어난 은밀하고 애틋한 사랑이었어요.",
+                details: [
+                    {emoji: "🏮", title: "만난 장소", text: "교토 기온가"},
+                    {emoji: "🍵", title: "첫 만남", text: "다도 모임"},
+                    {emoji: "🎋", title: "사랑의 상징", text: "대나무 부채"},
+                    {emoji: "🌸", title: "약속", text: "벚꽃 아래서"}
+                ],
+                loveScore: 92,
+                advice: "세련되고 품격 있는 사랑이 현생에서도 당신을 우아하게 만들어줄 것입니다!"
+            },
+            {
+                emoji: "🌙",
+                name: "아랍 천문학자 라일라",
+                story: "황금시대 바그다드, 당신은 수학자였고 그녀는 뛰어난 천문학자였습니다. 별을 보며 나눈 지적인 사랑이 영원히 빛나고 있어요.",
+                details: [
+                    {emoji: "🏛️", title: "만난 장소", text: "지혜의 집"},
+                    {emoji: "⭐", title: "첫 만남", text: "별 관측"},
+                    {emoji: "🌟", title: "사랑의 상징", text: "북극성"},
+                    {emoji: "📐", title: "약속", text: "천체 연구"}
+                ],
+                loveScore: 94,
+                advice: "무한한 우주처럼 깊은 사랑이 현생에서도 당신을 이끌어줄 것입니다!"
+            },
+            {
+                emoji: "🧜‍♀️",
+                name: "인어공주 메리나",
+                story: "전설 속 바다, 당신은 등대지기였고 그녀는 아름다운 인어공주였습니다. 육지와 바다를 넘나드는 판타지 같은 사랑이었어요.",
+                details: [
+                    {emoji: "🌊", title: "만난 장소", text: "외딴 등대 근처"},
+                    {emoji: "🌙", title: "첫 만남", text: "달빛 아래 바다"},
+                    {emoji: "🐚", title: "사랑의 상징", text: "진주 목걸이"},
+                    {emoji: "⚓", title: "약속", text: "바다의 맹세"}
+                ],
+                loveScore: 100,
+                advice: "환상적이고 순수한 사랑이 현생에서도 당신에게 기적을 선사할 것입니다!"
             }
         ];
-
-        // 생년월일 옵션 생성
-        function initDateSelectors() {
-            const yearSelect = document.getElementById('yearSelect');
-            const monthSelect = document.getElementById('monthSelect');
-            const daySelect = document.getElementById('daySelect');
-            
-            // 년도 옵션 (1920-2010)
-            for (let year = 2010; year >= 1920; year--) {
-                const option = document.createElement('option');
-                option.value = year;
-                option.textContent = year + '년';
-                yearSelect.appendChild(option);
-            }
-            
-            // 월 옵션
-            for (let month = 1; month <= 12; month++) {
-                const option = document.createElement('option');
-                option.value = month;
-                option.textContent = month + '월';
-                monthSelect.appendChild(option);
-            }
-            
-            // 일 옵션
-            for (let day = 1; day <= 31; day++) {
-                const option = document.createElement('option');
-                option.value = day;
-                option.textContent = day + '일';
-                daySelect.appendChild(option);
-            }
-        }
-
-        // 분석 버튼 활성화 체크
-        function checkAnalyzeButton() {
-            const hasImage = window.currentImageData;
-            const hasYear = document.getElementById('yearSelect').value;
-            const hasMonth = document.getElementById('monthSelect').value;
-            const hasDay = document.getElementById('daySelect').value;
-            
-            const analyzeBtn = document.getElementById('analyzeBtn');
-            analyzeBtn.disabled = !(hasImage && hasYear && hasMonth && hasDay);
-        }
 
         // 이미지 업로드 처리
         document.getElementById('imageUpload').addEventListener('change', function(e) {
@@ -927,7 +984,6 @@
                     
                     // 이미지 로드 완료 후 스크롤
                     previewImage.onload = function() {
-                        checkAnalyzeButton();
                         previewContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     };
                 };
@@ -942,11 +998,6 @@
                 console.log('선택된 파일이 없음');
             }
         });
-
-        // 날짜 선택 이벤트
-        document.getElementById('yearSelect').addEventListener('change', checkAnalyzeButton);
-        document.getElementById('monthSelect').addEventListener('change', checkAnalyzeButton);
-        document.getElementById('daySelect').addEventListener('change', checkAnalyzeButton);
 
         // 사용 제한 관리
         let testCount = 0;
@@ -999,40 +1050,38 @@
         // 제한 메시지 표시 (강제 차단보다는 안내)
         function showLimitMessage(count) {
             const messages = [
-                `🎯 오늘 ${count}번째 분석이네요! 정말 열심이시군요!`,
-                `🔥 이미 충분히 즐기셨어요! 친구들과 공유해보는 건 어떨까요?`,
-                `⭐ 내일 다시 오시면 새로운 인연이 기다려요!`,
+                `💕 오늘 ${count}번째 운명 찾기네요! 정말 로맨틱하시군요!`,
+                `💖 이미 충분히 사랑을 찾으셨어요! 친구들과 공유해보는 건 어떨까요?`,
+                `✨ 내일 다시 오시면 새로운 인연이 기다려요!`,
                 `💝 결과가 마음에 드셨나요? SNS에 공유해보세요!`
             ];
             
             const randomMessage = messages[Math.floor(Math.random() * messages.length)];
             
             // 부드러운 안내 (강제 차단 X)
-            if (confirm(`${randomMessage}\n\n그래도 계속 분석하시겠어요?`)) {
+            if (confirm(`${randomMessage}\n\n그래도 계속 테스트하시겠어요?`)) {
                 return true; // 사용자가 원하면 계속 허용
             }
             
             return false;
         }
 
-        // 이미지와 생년월일 기반 전생 연인 결정 함수
-        function getPastLoverFromData(imageData, birthYear, birthMonth, birthDay) {
+        // 이미지 기반 전생 연인 결정 함수
+        function getPastLoverFromImage(imageData) {
             if (!imageData) {
-                // 이미지가 없으면 생년월일만으로
-                const dateHash = simpleHash(`${birthYear}-${birthMonth}-${birthDay}`);
-                return pastLifeLoverData[dateHash % pastLifeLoverData.length];
+                // 이미지가 없으면 랜덤
+                return pastLoverData[Math.floor(Math.random() * pastLoverData.length)];
             }
             
-            // 이미지와 생년월일 조합으로 해시 생성
-            const combinedData = imageData + `${birthYear}-${birthMonth}-${birthDay}`;
-            const hash = simpleHash(combinedData);
+            // 이미지 데이터에서 해시 생성
+            const hash = simpleHash(imageData);
             
             // 해시를 기반으로 전생 연인 결정 (항상 동일한 결과)
-            const loverIndex = hash % pastLifeLoverData.length;
+            const loverIndex = hash % pastLoverData.length;
             
-            console.log('조합 해시:', hash, '전생 연인 인덱스:', loverIndex);
+            console.log('이미지 해시:', hash, '전생 연인 인덱스:', loverIndex);
             
-            return pastLifeLoverData[loverIndex];
+            return pastLoverData[loverIndex];
         }
 
         // 업로드 초기화 함수
@@ -1045,13 +1094,6 @@
             
             // 저장된 이미지 데이터도 초기화
             window.currentImageData = null;
-            
-            // 생년월일 초기화
-            document.getElementById('yearSelect').value = '';
-            document.getElementById('monthSelect').value = '';
-            document.getElementById('daySelect').value = '';
-            
-            checkAnalyzeButton();
             
             console.log('업로드 초기화 완료');
         }
@@ -1125,24 +1167,8 @@
                 return;
             }
             
-            // 필수 정보 확인
-            if (!window.currentImageData) {
-                alert('사진을 먼저 업로드해주세요!');
-                return;
-            }
-            
-            const birthYear = document.getElementById('yearSelect').value;
-            const birthMonth = document.getElementById('monthSelect').value;
-            const birthDay = document.getElementById('daySelect').value;
-            
-            if (!birthYear || !birthMonth || !birthDay) {
-                alert('생년월일을 모두 입력해주세요!');
-                return;
-            }
-            
             document.getElementById('loading').style.display = 'block';
             document.querySelector('.upload-section').style.display = 'none';
-            document.querySelector('.input-section').style.display = 'none';
             
             // 테스트 횟수 및 시간 기록
             const todayCount = getTodayTestCount() + 1;
@@ -1150,38 +1176,38 @@
             lastTestTime = Date.now();
             
             setTimeout(() => {
-                // 이미지와 생년월일 기반으로 일관된 결과 생성
-                const selectedLover = getPastLoverFromData(
-                    window.currentImageData, 
-                    birthYear, 
-                    birthMonth, 
-                    birthDay
-                );
+                // 이미지 기반으로 일관된 결과 생성
+                const selectedLover = getPastLoverFromImage(window.currentImageData);
                 
                 document.getElementById('loverEmoji').textContent = selectedLover.emoji;
-                document.getElementById('loverName').textContent = selectedLover.name;
-                document.getElementById('loverEra').textContent = selectedLover.era;
-                document.getElementById('loverDescription').textContent = selectedLover.desc;
-                document.getElementById('loveStoryText').textContent = selectedLover.story;
-                document.getElementById('connectionScore').textContent = `💕 영혼 연결도: ${selectedLover.connection}%`;
+                document.getElementById('loverTitle').textContent = selectedLover.name;
+                document.getElementById('loveStory').textContent = selectedLover.story;
                 
-                // 전생 인연 특징 표시
-                const compatibilityGrid = document.getElementById('compatibilityGrid');
-                compatibilityGrid.innerHTML = '';
-                selectedLover.compatibility.forEach(trait => {
+                // 세부 정보 표시
+                const detailsGrid = document.getElementById('detailsGrid');
+                detailsGrid.innerHTML = '';
+                selectedLover.details.forEach(detail => {
                     const item = document.createElement('div');
-                    item.className = 'compatibility-item';
+                    item.className = 'detail-item';
                     item.innerHTML = `
-                        <div class="compatibility-emoji">${trait.emoji}</div>
-                        <div class="compatibility-title">${trait.title}</div>
-                        <div class="compatibility-text">${trait.text}</div>
+                        <div class="detail-emoji">${detail.emoji}</div>
+                        <div class="detail-title">${detail.title}</div>
+                        <div class="detail-text">${detail.text}</div>
                     `;
-                    compatibilityGrid.appendChild(item);
+                    detailsGrid.appendChild(item);
                 });
+
+                // 사랑 지수 표시
+                document.getElementById('loveScore').textContent = `${selectedLover.loveScore}%`;
+                document.getElementById('loveAdvice').textContent = selectedLover.advice;
+                
+                // 사랑 바 애니메이션
+                setTimeout(() => {
+                    document.getElementById('loveFill').style.width = `${selectedLover.loveScore}%`;
+                }, 500);
                 
                 // 결과를 전역 변수에 저장 (공유 기능을 위해)
                 window.currentLoverResult = selectedLover;
-                window.currentBirthInfo = { year: birthYear, month: birthMonth, day: birthDay };
                 
                 document.getElementById('loading').style.display = 'none';
                 document.getElementById('resultSection').style.display = 'block';
@@ -1190,28 +1216,27 @@
                 if (todayCount >= 5) {
                     const countMessage = document.createElement('div');
                     countMessage.style.cssText = `
-                        background: linear-gradient(45deg, #FFE0E6, #FFF0F5);
+                        background: linear-gradient(45deg, #FFE0E6, #FFCDD2);
                         padding: 0.5rem 1rem;
                         border-radius: 15px;
                         margin: 1rem 0;
                         font-size: 0.9rem;
-                        color: #FF1493;
-                        border: 1px solid rgba(255,182,193,0.3);
+                        color: #E91E63;
                     `;
-                    countMessage.innerHTML = `💕 오늘 ${todayCount}번째 분석! 정말 열심이네요! ✨`;
+                    countMessage.innerHTML = `💕 오늘 ${todayCount}번째 사랑 찾기! 정말 로맨틱하네요! ✨`;
                     
                     const resultSection = document.getElementById('resultSection');
                     resultSection.insertBefore(countMessage, resultSection.children[1]);
                 }
                 
                 document.getElementById('resultSection').scrollIntoView({behavior: 'smooth'});
-            }, 4000);
+            }, 3000);
         }
 
         // 공유용 이미지 생성
         function generateShareImage() {
             if (!window.currentLoverResult) {
-                alert('먼저 전생 연인 분석을 완료해주세요!');
+                alert('먼저 전생 연인 찾기를 완료해주세요!');
                 return null;
             }
 
@@ -1220,9 +1245,9 @@
             
             // 배경 그라디언트
             const gradient = ctx.createLinearGradient(0, 0, 0, 800);
-            gradient.addColorStop(0, '#FF69B4');
-            gradient.addColorStop(0.5, '#FFB6C1');
-            gradient.addColorStop(1, '#FFC0CB');
+            gradient.addColorStop(0, '#FF6B6B');
+            gradient.addColorStop(0.5, '#FFE66D');
+            gradient.addColorStop(1, '#FF6B6B');
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, 600, 800);
             
@@ -1235,39 +1260,33 @@
             ctx.fillStyle = '#333';
             ctx.font = 'bold 32px Arial, sans-serif';
             ctx.textAlign = 'center';
-            ctx.fillText('🔮 전생 연인 찾기', 300, 160);
+            ctx.fillText('💕 전생 연인 찾기', 300, 160);
             
             // 전생 연인 이모지
             ctx.font = '120px Arial, sans-serif';
             ctx.fillText(window.currentLoverResult.emoji, 300, 280);
             
             // 전생 연인 이름
-            ctx.fillStyle = '#FF1493';
+            ctx.fillStyle = '#E91E63';
             ctx.font = 'bold 36px Arial, sans-serif';
             ctx.fillText(window.currentLoverResult.name, 300, 350);
             
-            // 시대
-            ctx.fillStyle = '#FF69B4';
-            ctx.font = '24px Arial, sans-serif';
-            ctx.fillText(window.currentLoverResult.era, 300, 390);
+            // 사랑 지수
+            ctx.fillStyle = '#FF1744';
+            ctx.font = 'bold 28px Arial, sans-serif';
+            ctx.fillText(`💘 운명적 사랑 지수: ${window.currentLoverResult.loveScore}%`, 300, 400);
             
-            // 설명
+            // 짧은 스토리
             ctx.fillStyle = '#555';
             ctx.font = '18px Arial, sans-serif';
             ctx.textAlign = 'center';
-            const lines = wrapText(ctx, window.currentLoverResult.desc, 300, 430, 400, 25);
-            
-            // 영혼 연결도
-            if (window.currentLoverResult.connection) {
-                ctx.fillStyle = '#FF1493';
-                ctx.font = 'bold 28px Arial, sans-serif';
-                ctx.fillText(`💕 영혼 연결도: ${window.currentLoverResult.connection}%`, 300, 520);
-            }
+            const shortStory = window.currentLoverResult.story.substring(0, 80) + '...';
+            wrapText(ctx, shortStory, 300, 450, 400, 24);
             
             // 하단 URL
             ctx.fillStyle = '#999';
             ctx.font = '18px Arial, sans-serif';
-            ctx.fillText('🌟 전생 연인 찾기에서 더 많은 분석을!', 300, 650);
+            ctx.fillText('💕 전생 연인 찾기에서 더 많은 운명을!', 300, 650);
             
             return canvas.toDataURL('image/png');
         }
@@ -1319,11 +1338,11 @@
             console.log('카카오톡 공유 시작');
             
             if (!window.currentLoverResult) {
-                alert('먼저 전생 연인 분석을 완료해주세요!');
+                alert('먼저 전생 연인 찾기를 완료해주세요!');
                 return;
             }
 
-            const shareText = `🔮 전생 연인 찾기 결과!\n\n${window.currentLoverResult.emoji} ${window.currentLoverResult.name}\n${window.currentLoverResult.era}\n\n💕 영혼 연결도: ${window.currentLoverResult.connection}%\n\n나도 분석해보기: ${window.location.href}`;
+            const shareText = `💕 전생 연인 찾기 결과!\n\n${window.currentLoverResult.emoji} ${window.currentLoverResult.name}\n💘 운명적 사랑 지수: ${window.currentLoverResult.loveScore}%\n\n${window.currentLoverResult.story.substring(0, 100)}...\n\n나도 테스트해보기: ${window.location.href}`;
             
             // 카카오 SDK 확인
             if (typeof Kakao !== 'undefined' && Kakao.isInitialized && Kakao.isInitialized()) {
@@ -1331,8 +1350,8 @@
                     Kakao.Share.sendDefault({
                         objectType: 'feed',
                         content: {
-                            title: '🔮 전생 연인 찾기 결과!',
-                            description: `${window.currentLoverResult.emoji} ${window.currentLoverResult.name} (${window.currentLoverResult.era})\n💕 영혼 연결도: ${window.currentLoverResult.connection}%`,
+                            title: '💕 전생 연인 찾기 결과!',
+                            description: `${window.currentLoverResult.emoji} ${window.currentLoverResult.name}\n💘 운명적 사랑 지수: ${window.currentLoverResult.loveScore}%`,
                             imageUrl: 'https://your-domain.com/pastlover-og.jpg',
                             link: {
                                 mobileWebUrl: window.location.href,
@@ -1341,7 +1360,7 @@
                         },
                         buttons: [
                             {
-                                title: '나도 분석하기',
+                                title: '나도 테스트하기',
                                 link: {
                                     mobileWebUrl: window.location.href,
                                     webUrl: window.location.href,
@@ -1369,7 +1388,7 @@
                     setTimeout(() => {
                         if (navigator.share) {
                             navigator.share({
-                                title: '🔮 전생 연인 찾기',
+                                title: '💕 전생 연인 찾기',
                                 text: shareText,
                                 url: window.location.href
                             }).catch(error => {
@@ -1390,7 +1409,7 @@
         // 인스타그램 공유
         function shareToInstagram() {
             if (!window.currentLoverResult) {
-                alert('먼저 전생 연인 분석을 완료해주세요!');
+                alert('먼저 전생 연인 찾기를 완료해주세요!');
                 return;
             }
             
@@ -1398,7 +1417,7 @@
             if (!shareImageData) return;
             
             const link = document.createElement('a');
-            link.download = `전생연인테스트_${window.currentLoverResult.name.replace(' ', '_')}.png`;
+            link.download = `전생연인찾기_${window.currentLoverResult.name.replace(' ', '_')}.png`;
             link.href = shareImageData;
             
             if (/Mobi|Android/i.test(navigator.userAgent)) {
@@ -1421,12 +1440,12 @@
         // 페이스북 공유
         function shareToFacebook() {
             if (!window.currentLoverResult) {
-                alert('먼저 전생 연인 분석을 완료해주세요!');
+                alert('먼저 전생 연인 찾기를 완료해주세요!');
                 return;
             }
 
             const shareUrl = encodeURIComponent(window.location.href);
-            const shareText = encodeURIComponent(`🔮 전생 연인 찾기에서 ${window.currentLoverResult.emoji} ${window.currentLoverResult.name}이 나왔어요! 영혼 연결도 ${window.currentLoverResult.connection}%`);
+            const shareText = encodeURIComponent(`💕 전생 연인 찾기에서 ${window.currentLoverResult.emoji} ${window.currentLoverResult.name}을 만났어요!`);
             
             const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${shareText}`;
             window.open(facebookUrl, '_blank', 'width=600,height=400');
@@ -1435,13 +1454,13 @@
         // 트위터 공유
         function shareToTwitter() {
             if (!window.currentLoverResult) {
-                alert('먼저 전생 연인 분석을 완료해주세요!');
+                alert('먼저 전생 연인 찾기를 완료해주세요!');
                 return;
             }
 
-            const shareText = encodeURIComponent(`🔮 전생 연인 찾기 결과: ${window.currentLoverResult.emoji} ${window.currentLoverResult.name}! 영혼 연결도 ${window.currentLoverResult.connection}% ✨`);
+            const shareText = encodeURIComponent(`💕 전생 연인 찾기 결과: ${window.currentLoverResult.emoji} ${window.currentLoverResult.name}! 💘 운명적 사랑 지수 ${window.currentLoverResult.loveScore}%`);
             const shareUrl = encodeURIComponent(window.location.href);
-            const hashtags = encodeURIComponent('전생연인,운명의인연,소울메이트,AI분석');
+            const hashtags = encodeURIComponent('전생연인,운명의사랑,소울메이트,AI테스트');
             
             const twitterUrl = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&hashtags=${hashtags}`;
             window.open(twitterUrl, '_blank', 'width=600,height=400');
@@ -1450,15 +1469,15 @@
         // 일반 공유 (링크 복사)
         function shareGeneral() {
             if (!window.currentLoverResult) {
-                alert('먼저 전생 연인 분석을 완료해주세요!');
+                alert('먼저 전생 연인 찾기를 완료해주세요!');
                 return;
             }
 
-            const shareText = `🔮 전생 연인 찾기 결과!\n\n${window.currentLoverResult.emoji} ${window.currentLoverResult.name}\n${window.currentLoverResult.era}\n\n${window.currentLoverResult.desc}\n\n💕 영혼 연결도: ${window.currentLoverResult.connection}%\n\n나도 분석해보기: ${window.location.href}`;
+            const shareText = `💕 전생 연인 찾기 결과!\n\n${window.currentLoverResult.emoji} ${window.currentLoverResult.name}\n💘 운명적 사랑 지수: ${window.currentLoverResult.loveScore}%\n\n${window.currentLoverResult.story}\n\n나도 테스트해보기: ${window.location.href}`;
             
             if (navigator.share) {
                 navigator.share({
-                    title: '🔮 전생 연인 찾기',
+                    title: '💕 전생 연인 찾기',
                     text: shareText,
                     url: window.location.href
                 }).catch(error => {
@@ -1473,7 +1492,7 @@
         function copyToClipboard(text) {
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(text).then(() => {
-                    alert('💕 전생 연인 분석 결과가 복사되었습니다!\n\n원하는 곳에 붙여넣기해서 공유해보세요! ✨');
+                    alert('💕 전생 연인 찾기 결과가 복사되었습니다!\n\n원하는 곳에 붙여넣기해서 공유해보세요! ✨');
                 }).catch(error => {
                     fallbackCopyToClipboard(text);
                 });
@@ -1498,7 +1517,7 @@
                 document.body.removeChild(textArea);
                 
                 if (successful) {
-                    alert('💕 전생 연인 분석 결과가 복사되었습니다!\n\n원하는 곳에 붙여넣기해서 공유해보세요! ✨');
+                    alert('💕 전생 연인 찾기 결과가 복사되었습니다!\n\n원하는 곳에 붙여넣기해서 공유해보세요! ✨');
                 } else {
                     alert('복사에 실패했습니다. 수동으로 선택해서 복사해주세요.');
                 }
@@ -1510,13 +1529,11 @@
         function retakeTest() {
             document.getElementById('resultSection').style.display = 'none';
             document.querySelector('.upload-section').style.display = 'block';
-            document.querySelector('.input-section').style.display = 'block';
             resetUpload();
             
             // 저장된 데이터 초기화
             window.currentImageData = null;
             window.currentLoverResult = null;
-            window.currentBirthInfo = null;
         }
 
         function saveResult() {
@@ -1526,8 +1543,7 @@
             }
             
             const resultData = {
-                lover: window.currentLoverResult,
-                birthInfo: window.currentBirthInfo,
+                pastLover: window.currentLoverResult,
                 timestamp: new Date().toISOString(),
                 url: window.location.href
             };
@@ -1543,11 +1559,6 @@
         function scrollToUpload() {
             document.querySelector('.upload-section').scrollIntoView({behavior: 'smooth'});
         }
-
-        // 페이지 로드 시 초기화
-        document.addEventListener('DOMContentLoaded', function() {
-            initDateSelectors();
-        });
     </script>
 </body>
 </html>
