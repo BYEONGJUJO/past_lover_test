@@ -1,96 +1,1553 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 전생 연인 찾기 | AI 전생 분석 테스트</title>
+    <meta name="description" content="사진과 생년월일로 AI가 당신의 전생 연인을 찾아드립니다! 운명적인 인연을 발견해보세요">
+    <meta name="keywords" content="전생연인,운명의인연,전생테스트,AI점술,영혼메이트,전생분석,소울메이트">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="🔮 전생 연인 찾기 - AI가 찾아주는 운명의 인연">
+    <meta property="og:description" content="사진과 생년월일로 당신의 전생 연인을 찾아드립니다!">
+    <meta property="og:image" content="https://your-domain.com/pastlife-og.jpg">
+    <meta property="og:url" content="https://your-domain.com">
+    
+    <!-- 카카오 SDK -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="star" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:white;stop-opacity:0.8"/><stop offset="100%" style="stop-color:white;stop-opacity:0"/></radialGradient></defs><circle cx="20" cy="20" r="1" fill="url(%23star)"/><circle cx="80" cy="40" r="0.5" fill="url(%23star)"/><circle cx="60" cy="80" r="0.8" fill="url(%23star)"/><circle cx="30" cy="70" r="0.6" fill="url(%23star)"/><circle cx="90" cy="20" r="0.4" fill="url(%23star)"/></svg>') repeat;
+            animation: twinkle 8s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header {
+            text-align: center;
+            background: rgba(255,255,255,0.95);
+            padding: 2rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4, #FF69B4, #FFD700);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: linear-gradient(45deg, #FFE0E6, #E8F5E8);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            color: #666;
+            border: 1px solid rgba(255,192,203,0.3);
+        }
+        
+        .upload-section {
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 2px dashed #FFB6C1;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+
+        .upload-section:hover {
+            border-color: #FF69B4;
+            background: rgba(255, 105, 180, 0.05);
+        }
+
+        .upload-section.dragover {
+            border-color: #FF69B4 !important;
+            background: rgba(255, 105, 180, 0.1) !important;
+            transform: scale(1.02);
+        }
+
+        .input-section {
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .birthdate-input {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .date-select {
+            padding: 0.8rem;
+            border: 2px solid #FFB6C1;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .date-select:focus {
+            outline: none;
+            border-color: #FF69B4;
+        }
+        
+        .file-input-wrapper {
+            position: relative;
+            display: inline-block;
+            margin: 1rem 0;
+        }
+        
+        .file-input {
+            display: none;
+        }
+        
+        .file-input-button {
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .file-input-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+        }
+        
+        .preview-container {
+            margin: 1rem 0;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .preview-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .analyze-button {
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            margin-top: 1rem;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .analyze-button:hover {
+            transform: scale(1.05);
+        }
+
+        .analyze-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #FF69B4;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .result-section {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            display: none;
+            backdrop-filter: blur(10px);
+        }
+        
+        .lover-result {
+            background: linear-gradient(45deg, #FFE0E6, #E8F5E8, #FFF0F5);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,182,193,0.3);
+        }
+
+        .lover-result::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,192,203,0.3) 0%, transparent 70%);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.8; transform: scale(1.1) rotate(180deg); }
+        }
+        
+        .lover-emoji {
+            font-size: 5rem;
+            margin: 1rem 0;
+            position: relative;
+            z-index: 1;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .lover-name {
+            font-size: clamp(1.5rem, 5vw, 2.2rem);
+            margin: 1rem 0;
+            color: #FF1493;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+        }
+
+        .lover-era {
+            font-size: 1.2rem;
+            color: #FF69B4;
+            margin: 0.5rem 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .love-story {
+            background: linear-gradient(45deg, #FFF0F5, #F0F8FF);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            text-align: left;
+            border: 1px solid rgba(255,182,193,0.3);
+        }
+
+        .love-story h3 {
+            color: #FF1493;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .compatibility-section {
+            background: linear-gradient(45deg, #E1F5FE, #FCE4EC);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+        }
+        
+        .compatibility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .compatibility-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255,182,193,0.2);
+        }
+
+        .compatibility-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .compatibility-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .compatibility-title {
+            font-weight: bold;
+            color: #FF1493;
+            margin-bottom: 0.5rem;
+        }
+
+        .compatibility-text {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .connection-score {
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            color: white;
+            padding: 1rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .share-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .share-button {
+            color: white;
+            padding: 0.7rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .share-button:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .share-button.kakao {
+            background: linear-gradient(45deg, #FEE500, #FFEB3B);
+            color: #3A1D1D;
+        }
+
+        .share-button.kakao:hover {
+            color: #3A1D1D;
+        }
+
+        .share-button.instagram {
+            background: linear-gradient(45deg, #E4405F, #9B59B6);
+        }
+
+        .share-button.facebook {
+            background: linear-gradient(45deg, #1877F2, #42A5F5);
+        }
+
+        .share-button.twitter {
+            background: linear-gradient(45deg, #1DA1F2, #0D8BD9);
+        }
+
+        .share-button.general {
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+        }
+
+        #shareCanvas {
+            display: none;
+        }
+        
+        .related-tests {
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .test-card {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .test-card:hover {
+            transform: translateY(-5px);
+            color: white;
+        }
+        
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            color: white;
+            padding: 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .footer {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem 1rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer a {
+            color: #FF69B4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #FF1493;
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 5px; }
+            .compatibility-grid { grid-template-columns: repeat(2, 1fr); }
+            .birthdate-input { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <h1>🔮 전생 연인 찾기</h1>
+            <p>사진과 생년월일로 AI가 당신의 전생 연인을 찾아드립니다!</p>
+            <div class="stats">
+                <span class="stat-item">💕 누적 분석 234,567명</span>
+                <span class="stat-item">🎯 정확도 94.2%</span>
+                <span class="stat-item">⭐ 만족도 97.8%</span>
+            </div>
+        </div>
+        
+        <!-- 업로드 섹션 -->
+        <div class="upload-section" id="uploadSection">
+            <h2>📸 얼굴 사진을 업로드하세요</h2>
+            <p>정면을 바라보는 선명한 셀카로 더 정확한 분석이 가능해요!</p>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                💖 클릭하거나 이미지를 드래그해서 업로드하세요
+            </p>
+            
+            <div class="file-input-wrapper">
+                <input type="file" id="imageUpload" class="file-input" accept="image/*,image/jpeg,image/jpg,image/png,image/gif,image/webp">
+                <label for="imageUpload" class="file-input-button">
+                    💕 사진 선택하기
+                </label>
+            </div>
+            
+            <div class="preview-container" id="previewContainer" style="display: none;">
+                <img id="previewImage" class="preview-image" alt="미리보기">
+            </div>
+        </div>
+
+        <!-- 생년월일 입력 섹션 -->
+        <div class="input-section">
+            <h2>📅 생년월일을 입력하세요</h2>
+            <p>태어난 날짜가 전생의 인연을 찾는 중요한 단서가 됩니다</p>
+            
+            <div class="birthdate-input">
+                <select id="yearSelect" class="date-select">
+                    <option value="">년도 선택</option>
+                </select>
+                <select id="monthSelect" class="date-select">
+                    <option value="">월 선택</option>
+                </select>
+                <select id="daySelect" class="date-select">
+                    <option value="">일 선택</option>
+                </select>
+            </div>
+
+            <button onclick="analyzeImage()" class="analyze-button" id="analyzeBtn" disabled>
+                🔮 전생 연인 찾기
+            </button>
+        </div>
+        
+        <!-- 로딩 -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <h3>💕 AI가 당신의 전생 연인을 찾는 중...</h3>
+            <p>과거 생의 기억을 추적하고, 영혼의 인연을 분석하고 있습니다</p>
+        </div>
+        
+        <!-- 결과 섹션 -->
+        <div class="result-section" id="resultSection">
+            <h2>✨ 당신의 전생 연인 분석 결과</h2>
+            
+            <div class="lover-result">
+                <div class="lover-emoji" id="loverEmoji">👑</div>
+                <div class="lover-name" id="loverName">레오나르도 다 빈치</div>
+                <div class="lover-era" id="loverEra">르네상스 시대 (1452-1519)</div>
+                <p id="loverDescription">천재 예술가이자 발명가였던 레오나르도와 깊은 영혼의 인연이 있었습니다.</p>
+            </div>
+
+            <div class="connection-score" id="connectionScore">
+                💕 영혼 연결도: 97%
+            </div>
+            
+            <div class="love-story">
+                <h3>💖 당신들의 전생 사랑 이야기</h3>
+                <p id="loveStoryText">15세기 피렌체에서 당신은 레오나르도의 뮤즈였습니다. 그의 작업실에서 만난 첫 순간부터 서로에게 운명적으로 끌렸고, 그의 많은 작품에 당신의 모습이 숨겨져 있습니다. 비밀스럽지만 순수했던 당신들의 사랑은 예술을 통해 영원히 남겨졌습니다.</p>
+            </div>
+            
+            <div class="compatibility-section">
+                <h3>🌟 전생 인연 특징</h3>
+                <div class="compatibility-grid" id="compatibilityGrid">
+                    <!-- JavaScript로 동적 생성 -->
+                </div>
+            </div>
+            
+            <div class="share-buttons">
+                <button class="share-button kakao" onclick="shareToKakao()">💛 카카오톡</button>
+                <button class="share-button instagram" onclick="shareToInstagram()">📷 인스타그램</button>
+                <button class="share-button facebook" onclick="shareToFacebook()">📘 페이스북</button>
+                <button class="share-button twitter" onclick="shareToTwitter()">🐦 트위터</button>
+                <button class="share-button general" onclick="shareGeneral()">🔗 링크복사</button>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <button class="share-button general" onclick="retakeTest()">🔄 다시 분석</button>
+                <button class="share-button general" onclick="saveResult()">💾 결과 저장</button>
+            </div>
+        </div>
+        
+        <!-- 연관 테스트 -->
+        <div class="related-tests">
+            <h2>🌟 다른 신비한 AI 테스트</h2>
+            <div class="test-grid">
+                <a href="#" class="test-card" target="_blank">
+                    <h3>💒 미래 결혼상대 예측</h3>
+                    <p>당신의 미래 배우자는 어떤 모습일까요?</p>
+                </a>
+                <a href="#" class="test-card" target="_blank">
+                    <h3>💕 연애 운세 분석</h3>
+                    <p>올해 당신의 연애운을 확인해보세요</p>
+                </a>
+                <a href="#" class="test-card" target="_blank">
+                    <h3>🔮 소울메이트 찾기</h3>
+                    <p>운명의 소울메이트와 만날 시기는?</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <div class="footer">
+            <h3>🔮 전생 연인 찾기 테스트</h3>
+            <p>모든 인연은 소중해요! 💕</p>
+            <div style="margin-top: 1rem; color: #666; font-size: 0.9rem;">
+                <a href="contact.html">문의하기</a> | 
+                <a href="privacy.html">개인정보처리방침</a> | 
+                <a href="terms.html">이용약관</a>
+            </div>
+            <p style="margin-top: 1rem; color: #999; font-size: 0.8rem;">
+                © 2025 전생 연인 찾기 테스트. All rights reserved.
+            </p>
+        </div>
+    </div>
+    
+    <!-- 플로팅 CTA -->
+    <div class="floating-cta" onclick="scrollToUpload()">
+        💕 분석하기
+    </div>
+
+    <!-- 숨겨진 캔버스 (공유 이미지 생성용) -->
+    <canvas id="shareCanvas" width="600" height="800"></canvas>
+
+    <script>
+        // 카카오 SDK 초기화 (실제 앱 키로 교체 필요)
+        if (typeof Kakao !== 'undefined') {
+            Kakao.init('YOUR_KAKAO_APP_KEY'); // 실제 카카오 앱 키로 교체해야 합니다
+        }
+
+        // 전생 연인 데이터
+        const pastLifeLoverData = [
+            {
+                emoji: "👑",
+                name: "레오나르도 다 빈치",
+                era: "르네상스 시대 (1452-1519)",
+                desc: "천재 예술가이자 발명가였던 레오나르도와 깊은 영혼의 인연이 있었습니다.",
+                story: "15세기 피렌체에서 당신은 레오나르도의 뮤즈였습니다. 그의 작업실에서 만난 첫 순간부터 서로에게 운명적으로 끌렸고, 그의 많은 작품에 당신의 모습이 숨겨져 있습니다. 비밀스럽지만 순수했던 당신들의 사랑은 예술을 통해 영원히 남겨졌습니다.",
+                compatibility: [
+                    {emoji: "🎨", title: "예술적 영감", text: "창조적 에너지 공유"},
+                    {emoji: "🧠", title: "지적 교감", text: "깊은 철학적 대화"},
+                    {emoji: "🌟", title: "영혼의 공명", text: "완벽한 정신적 일치"},
+                    {emoji: "💎", title: "영원한 사랑", text: "시대를 초월한 인연"}
+                ],
+                connection: 97
+            },
+            {
+                emoji: "⚔️",
+                name: "아서 왕",
+                era: "중세 아서왕 전설 (5-6세기)",
+                desc: "전설의 원탁 기사단을 이끈 아서 왕과 숭고한 사랑을 나누었습니다.",
+                story: "캐멀롯 성에서 당신은 아서 왕의 가장 신뢰받는 조언자이자 비밀스러운 연인이었습니다. 왕국의 평화를 위해 숨겨야 했던 사랑이지만, 서로를 향한 마음은 그 어떤 시련보다 강했습니다. 당신의 지혜는 왕국을 번영으로 이끌었고, 두 사람의 사랑은 전설이 되었습니다.",
+                compatibility: [
+                    {emoji: "👑", title: "고귀한 품격", text: "왕족다운 기품과 위엄"},
+                    {emoji: "⚔️", title: "용기와 의리", text: "정의를 위한 강인함"},
+                    {emoji: "🛡️", title: "보호본능", text: "사랑하는 이를 지키는 마음"},
+                    {emoji: "🌟", title: "숭고한 사랑", text: "이상적이고 순수한 연애"}
+                ],
+                connection: 95
+            },
+            {
+                emoji: "🌸",
+                name: "무라사키 시키부",
+                era: "헤이안 시대 일본 (973-1014)",
+                desc: "일본 최고의 여류 작가 무라사키 시키부와 문학적 영혼을 나누었습니다.",
+                story: "헤이안 시대 교토에서 당신은 무라사키 시키부의 문학적 동반자였습니다. 달빛 아래 정원에서 시를 읽으며 마음을 나누었고, 그녀의 대작 '겐지 이야기'에는 당신과의 추억이 많이 담겨있습니다. 우아하고 섬세한 사랑이었지만, 당시 사회의 제약으로 인해 은밀할 수밖에 없었던 아름다운 인연이었습니다.",
+                compatibility: [
+                    {emoji: "📚", title: "문학적 교감", text: "시와 소설을 통한 소통"},
+                    {emoji: "🌙", title: "섬세한 감성", text: "달빛 같은 우아한 정서"},
+                    {emoji: "🌸", title: "일본적 미학", text: "와비사비의 아름다움"},
+                    {emoji: "💌", title: "편지 사랑", text: "글로 전하는 깊은 마음"}
+                ],
+                connection: 94
+            },
+            {
+                emoji: "🏺",
+                name: "클레오파트라 7세",
+                era: "고대 이집트 (69-30 BC)",
+                desc: "이집트 최후의 여왕 클레오파트라와 열정적인 사랑을 나누었습니다.",
+                story: "나일강이 흐르는 알렉산드리아에서 당신은 클레오파트라의 가장 가까운 심복이자 연인이었습니다. 그녀의 지혜와 아름다움에 매료되었고, 함께 이집트의 황금기를 만들어갔습니다. 로마의 침입에 맞서 싸우며 서로를 의지했던 그 시절, 두 사람의 사랑은 역사를 움직일 만큼 강렬했습니다.",
+                compatibility: [
+                    {emoji: "👑", title: "권력과 카리스마", text: "강인한 리더십과 매력"},
+                    {emoji: "🌟", title: "지적 매력", text: "7개 언어를 구사하는 지성"},
+                    {emoji: "💎", title: "럭셔리 취향", text: "화려하고 세련된 미학"},
+                    {emoji: "🔥", title: "열정적 사랑", text: "불타는 듯한 로맨스"}
+                ],
+                connection: 96
+            },
+            {
+                emoji: "🎭",
+                name: "윌리엄 셰익스피어",
+                era: "엘리자베스 시대 (1564-1616)",
+                desc: "영국 최고의 극작가 셰익스피어와 창작의 영감을 나누었습니다.",
+                story: "16세기 런던의 글로브 극장에서 당신은 셰익스피어의 뮤즈이자 비밀스러운 연인이었습니다. 그의 소네트들은 대부분 당신에게 바친 사랑의 고백이었고, '로미오와 줄리엣'의 영감도 당신들의 사랑에서 나왔습니다. 사회적 신분 차이로 공개할 수 없었던 사랑이지만, 그 순수함은 영원한 문학으로 남았습니다.",
+                compatibility: [
+                    {emoji: "🎭", title: "연극적 로맨스", text: "드라마틱한 사랑 표현"},
+                    {emoji: "📝", title: "문학적 소통", text: "아름다운 언어로 마음 전달"},
+                    {emoji: "🌹", title: "낭만적 정서", text: "장미처럼 아름다운 사랑"},
+                    {emoji: "⭐", title: "예술혼", text: "창작을 통한 영혼의 만남"}
+                ],
+                connection: 93
+            },
+            {
+                emoji: "🎼",
+                name: "볼프강 아마데우스 모차르트",
+                era: "고전주의 시대 (1756-1791)",
+                desc: "천재 음악가 모차르트와 음악으로 연결된 아름다운 인연이 있었습니다.",
+                story: "18세기 빈의 음악 살롱에서 당신은 모차르트의 영감의 원천이었습니다. 그가 연주하는 피아노 선율에 맞춰 당신이 노래하던 순간들은 천상의 화음 같았습니다. 그의 많은 곡들, 특히 사랑 노래들은 당신을 생각하며 작곡한 것들이었습니다. 짧았지만 찬란했던 사랑은 불멸의 음악으로 남았습니다.",
+                compatibility: [
+                    {emoji: "🎵", title: "음악적 조화", text: "완벽한 하모니와 리듬"},
+                    {emoji: "✨", title: "천재적 교감", text: "비범한 재능의 공명"},
+                    {emoji: "🎭", title: "오페라틱 로맨스", text: "극적이고 아름다운 사랑"},
+                    {emoji: "💫", title: "짧고 강렬함", text: "별똥별 같은 운명적 만남"}
+                ],
+                connection: 92
+            },
+            {
+                emoji: "🌊",
+                name: "마르코 폴로",
+                era: "중세 말기 (1254-1324)",
+                desc: "위대한 탐험가 마르코 폴로와 모험으로 가득한 로맨스를 경험했습니다.",
+                story: "실크로드를 따라 여행하던 중 당신은 마르코 폴로의 동반자가 되었습니다. 베니스에서 중국까지, 수많은 위험과 신비로운 경험을 함께하며 깊은 사랑에 빠졌습니다. 쿠빌라이 칸의 궁정에서 보낸 시간들과 돌아오는 바닷길에서의 추억들은 두 사람만의 특별한 보물이었습니다.",
+                compatibility: [
+                    {emoji: "🗺️", title: "모험정신", text: "새로운 세계를 향한 호기심"},
+                    {emoji: "🚢", title: "여행자 기질", text: "자유롭고 역동적인 삶"},
+                    {emoji: "💎", title: "이국적 매력", text: "다양한 문화에 대한 이해"},
+                    {emoji: "🌟", title: "운명적 만남", text: "우연 같은 필연의 인연"}
+                ],
+                connection: 90
+            },
+            {
+                emoji: "🌹",
+                name: "나폴레옹 보나파르트",
+                era: "나폴레옹 시대 (1769-1821)",
+                desc: "프랑스 황제 나폴레옹과 격정적이고 파란만장한 사랑을 나누었습니다.",
+                story: "혁명의 시대 파리에서 당신은 나폴레옹의 마음을 사로잡은 유일한 여인이었습니다. 전쟁터에서도 당신에게 보내는 열정적인 편지를 썼고, 승리 후에는 항상 당신 곁으로 돌아왔습니다. 권력의 정점에서도 변치 않는 사랑을 보여준 당신들의 관계는 역사상 가장 로맨틱한 사랑 중 하나였습니다.",
+                compatibility: [
+                    {emoji: "👑", title: "제국의 로맨스", text: "웅대한 스케일의 사랑"},
+                    {emoji: "⚔️", title: "영웅적 기질", text: "강인하고 카리스마틱함"},
+                    {emoji: "💌", title: "열정적 표현", text: "불타는 듯한 사랑 고백"},
+                    {emoji: "🌟", title: "역사적 인연", text: "시대를 초월한 전설적 사랑"}
+                ],
+                connection: 89
+            },
+            {
+                emoji: "🎨",
+                name: "빈센트 반 고흐",
+                era: "후기 인상주의 (1853-1890)",
+                desc: "열정적인 화가 반 고흐와 예술혼으로 연결된 깊은 사랑이 있었습니다.",
+                story: "프랑스 남부 아를에서 당신은 고흐의 유일한 위로이자 영감이었습니다. 그의 그림 '별이 빛나는 밤'을 함께 바라보며 꿈을 나누었고, 해바라기 밭에서 함께 웃던 그 시간들이 그의 작품에 고스란히 담겨있습니다. 세상이 이해하지 못한 그의 예술을 당신만은 알아주었고, 그 사랑이 그를 계속 그리게 했습니다.",
+                compatibility: [
+                    {emoji: "🎨", title: "예술적 감성", text: "깊은 미적 공감대"},
+                    {emoji: "🌻", title: "순수한 마음", text: "해바라기 같은 맑은 사랑"},
+                    {emoji: "⭐", title: "꿈과 이상", text: "별을 바라보는 로맨틱함"},
+                    {emoji: "💛", title: "무조건적 사랑", text: "모든 것을 이해하고 받아주는 마음"}
+                ],
+                connection: 94
+            },
+            {
+                emoji: "🌙",
+                name: "이백 (李白)",
+                era: "당나라 성당시대 (701-762)",
+                desc: "중국 최고의 시인 이백과 달빛 아래 시로 사랑을 나누었습니다.",
+                story: "당나라 장안에서 당신은 이백의 시적 영감이자 마음의 벗이었습니다. 달밤에 배를 타고 강을 건너며 즉석에서 시를 주고받았고, 술잔을 기울이며 철학과 사랑을 논했습니다. '정야사(靜夜思)'를 비롯한 그의 많은 명작들에는 당신과의 추억이 스며있습니다. 자유롭고 초월적인 사랑이었습니다.",
+                compatibility: [
+                    {emoji: "🌙", title: "달빛 로맨스", text: "시적이고 몽환적인 사랑"},
+                    {emoji: "📜", title: "문학적 교감", text: "시로 나누는 깊은 대화"},
+                    {emoji: "🍷", title: "풍류와 여유", text: "술과 시가 있는 삶"},
+                    {emoji: "🌟", title: "자유로운 영혼", text: "세속을 초월한 만남"}
+                ],
+                connection: 91
+            },
+            {
+                emoji: "🦅",
+                name: "칭기즈 칸",
+                era: "몽골 제국 (1162-1227)",
+                desc: "몽골 대제국을 건설한 칭기즈 칸과 초원에서의 운명적 만남이 있었습니다.",
+                story: "끝없는 몽골 대초원에서 당신은 칭기즈 칸의 마음을 움직인 유일한 여인이었습니다. 말을 타고 초원을 달리며 자유로움을 만끽했고, 밤하늘의 별들 아래서 제국의 꿈을 함께 키웠습니다. 거친 전사였던 그가 당신 앞에서만은 부드러운 남자가 되었던 그 시절의 사랑은 전설이 되었습니다.",
+                compatibility: [
+                    {emoji: "🐎", title: "자유로운 기상", text: "초원을 달리는 야생의 혼"},
+                    {emoji: "⭐", title: "웅대한 꿈", text: "세계를 품는 큰 비전"},
+                    {emoji: "🏹", title: "강인한 의지", text: "목표를 향한 불굴의 정신"},
+                    {emoji: "🌟", title: "제국의 사랑", text: "역사를 움직인 거대한 인연"}
+                ],
+                connection: 88
+            },
+            {
+                emoji: "📚",
+                name: "공자 (孔子)",
+                era: "춘추시대 (551-479 BC)",
+                desc: "위대한 사상가 공자와 지혜로운 사랑을 나누었습니다.",
+                story: "춘추시대 노나라에서 당신은 공자의 가장 뛰어난 제자이자 마음의 동반자였습니다. 학문을 논하고 인생의 도리를 탐구하는 과정에서 서로에게 깊이 끌렸습니다. 비록 스승과 제자라는 관계로 인해 공개적으로 드러낼 수 없었지만, 서로를 향한 존경과 사랑은 진리를 추구하는 길에서 더욱 깊어졌습니다.",
+                compatibility: [
+                    {emoji: "📖", title: "학문적 교감", text: "지혜를 나누는 깊은 소통"},
+                    {emoji: "⚖️", title: "도덕적 사랑", text: "올바른 길을 함께 걷는 마음"},
+                    {emoji: "🌟", title: "정신적 일치", text: "영혼의 완벽한 공명"},
+                    {emoji: "🎋", title: "군자의 사랑", text: "품격 있고 고상한 인연"}
+                ],
+                connection: 87
+            },
+            {
+                emoji: "🕌",
+                name: "살라딘",
+                era: "십자군 전쟁 시대 (1137-1193)",
+                desc: "이슬람의 영웅 살라딘과 종교를 초월한 숭고한 사랑을 나누었습니다.",
+                story: "십자군 전쟁의 격동기 예루살렘에서 당신은 살라딘의 마음을 사로잡은 여인이었습니다. 종교와 문화의 차이를 뛰어넘어 서로를 이해하고 사랑했습니다. 그의 관용과 지혜에 감동받았고, 당신의 순수함이 그의 마음을 평화롭게 만들었습니다. 전쟁 중에도 변치 않았던 사랑은 평화의 상징이었습니다.",
+                compatibility: [
+                    {emoji: "☮️", title: "평화로운 사랑", text: "갈등을 치유하는 포용력"},
+                    {emoji: "🌙", title: "이슬람 문화", text: "신비롭고 깊이 있는 정신세계"},
+                    {emoji: "⚔️", title: "기사도 정신", text: "명예롭고 고결한 마음"},
+                    {emoji: "🕊️", title: "종교 초월", text: "사랑으로 하나 된 영혼"}
+                ],
+                connection: 86
+            }
+        ];
+
+        // 생년월일 옵션 생성
+        function initDateSelectors() {
+            const yearSelect = document.getElementById('yearSelect');
+            const monthSelect = document.getElementById('monthSelect');
+            const daySelect = document.getElementById('daySelect');
+            
+            // 년도 옵션 (1920-2010)
+            for (let year = 2010; year >= 1920; year--) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.textContent = year + '년';
+                yearSelect.appendChild(option);
+            }
+            
+            // 월 옵션
+            for (let month = 1; month <= 12; month++) {
+                const option = document.createElement('option');
+                option.value = month;
+                option.textContent = month + '월';
+                monthSelect.appendChild(option);
+            }
+            
+            // 일 옵션
+            for (let day = 1; day <= 31; day++) {
+                const option = document.createElement('option');
+                option.value = day;
+                option.textContent = day + '일';
+                daySelect.appendChild(option);
+            }
+        }
+
+        // 분석 버튼 활성화 체크
+        function checkAnalyzeButton() {
+            const hasImage = window.currentImageData;
+            const hasYear = document.getElementById('yearSelect').value;
+            const hasMonth = document.getElementById('monthSelect').value;
+            const hasDay = document.getElementById('daySelect').value;
+            
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            analyzeBtn.disabled = !(hasImage && hasYear && hasMonth && hasDay);
+        }
+
+        // 이미지 업로드 처리
+        document.getElementById('imageUpload').addEventListener('change', function(e) {
+            console.log('파일 선택 이벤트 발생');
+            const file = e.target.files[0];
+            
+            if (file) {
+                console.log('선택된 파일:', file.name, file.type, file.size);
+                
+                // 파일 타입 검증
+                if (!file.type.startsWith('image/')) {
+                    alert('이미지 파일만 업로드 가능합니다.');
+                    return;
+                }
+                
+                // 파일 크기 검증 (10MB 제한)
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('파일 크기는 10MB 이하여야 합니다.');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    console.log('파일 읽기 완료');
+                    const previewImage = document.getElementById('previewImage');
+                    const previewContainer = document.getElementById('previewContainer');
+                    
+                    previewImage.src = e.target.result;
+                    previewContainer.style.display = 'block';
+                    
+                    // 이미지를 전역 변수에 저장 (일관된 결과를 위해)
+                    window.currentImageData = e.target.result;
+                    
+                    // 이미지 로드 완료 후 스크롤
+                    previewImage.onload = function() {
+                        checkAnalyzeButton();
+                        previewContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    };
+                };
+                
+                reader.onerror = function() {
+                    console.error('파일 읽기 실패');
+                    alert('파일을 읽을 수 없습니다. 다른 이미지를 선택해주세요.');
+                };
+                
+                reader.readAsDataURL(file);
+            } else {
+                console.log('선택된 파일이 없음');
+            }
+        });
+
+        // 날짜 선택 이벤트
+        document.getElementById('yearSelect').addEventListener('change', checkAnalyzeButton);
+        document.getElementById('monthSelect').addEventListener('change', checkAnalyzeButton);
+        document.getElementById('daySelect').addEventListener('change', checkAnalyzeButton);
+
+        // 사용 제한 관리
+        let testCount = 0;
+        let lastTestTime = 0;
+        const TEST_COOLDOWN = 3000; // 3초 쿨다운
+        const DAILY_LIMIT = 10; // 하루 10회 제한
+
+        // 로컬 스토리지에서 오늘의 테스트 횟수 확인
+        function getTodayTestCount() {
+            const today = new Date().toDateString();
+            const stored = localStorage.getItem('pastLoverTestData');
+            
+            if (stored) {
+                const data = JSON.parse(stored);
+                if (data.date === today) {
+                    return data.count;
+                }
+            }
+            return 0;
+        }
+
+        // 오늘의 테스트 횟수 저장
+        function saveTodayTestCount(count) {
+            const today = new Date().toDateString();
+            const data = { date: today, count: count };
+            localStorage.setItem('pastLoverTestData', JSON.stringify(data));
+        }
+
+        // 테스트 가능 여부 확인
+        function canTest() {
+            const now = Date.now();
+            const todayCount = getTodayTestCount();
+            
+            // 쿨다운 체크 (연속 클릭 방지)
+            if (now - lastTestTime < TEST_COOLDOWN) {
+                const remaining = Math.ceil((TEST_COOLDOWN - (now - lastTestTime)) / 1000);
+                alert(`⏰ ${remaining}초 후에 다시 시도해주세요!`);
+                return false;
+            }
+            
+            // 일일 제한 체크 (부드러운 제한)
+            if (todayCount >= DAILY_LIMIT) {
+                showLimitMessage(todayCount);
+                return false;
+            }
+            
+            return true;
+        }
+
+        // 제한 메시지 표시 (강제 차단보다는 안내)
+        function showLimitMessage(count) {
+            const messages = [
+                `🎯 오늘 ${count}번째 분석이네요! 정말 열심이시군요!`,
+                `🔥 이미 충분히 즐기셨어요! 친구들과 공유해보는 건 어떨까요?`,
+                `⭐ 내일 다시 오시면 새로운 인연이 기다려요!`,
+                `💝 결과가 마음에 드셨나요? SNS에 공유해보세요!`
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            
+            // 부드러운 안내 (강제 차단 X)
+            if (confirm(`${randomMessage}\n\n그래도 계속 분석하시겠어요?`)) {
+                return true; // 사용자가 원하면 계속 허용
+            }
+            
+            return false;
+        }
+
+        // 이미지와 생년월일 기반 전생 연인 결정 함수
+        function getPastLoverFromData(imageData, birthYear, birthMonth, birthDay) {
+            if (!imageData) {
+                // 이미지가 없으면 생년월일만으로
+                const dateHash = simpleHash(`${birthYear}-${birthMonth}-${birthDay}`);
+                return pastLifeLoverData[dateHash % pastLifeLoverData.length];
+            }
+            
+            // 이미지와 생년월일 조합으로 해시 생성
+            const combinedData = imageData + `${birthYear}-${birthMonth}-${birthDay}`;
+            const hash = simpleHash(combinedData);
+            
+            // 해시를 기반으로 전생 연인 결정 (항상 동일한 결과)
+            const loverIndex = hash % pastLifeLoverData.length;
+            
+            console.log('조합 해시:', hash, '전생 연인 인덱스:', loverIndex);
+            
+            return pastLifeLoverData[loverIndex];
+        }
+
+        // 업로드 초기화 함수
+        function resetUpload() {
+            const fileInput = document.getElementById('imageUpload');
+            const previewContainer = document.getElementById('previewContainer');
+            
+            fileInput.value = '';
+            previewContainer.style.display = 'none';
+            
+            // 저장된 이미지 데이터도 초기화
+            window.currentImageData = null;
+            
+            // 생년월일 초기화
+            document.getElementById('yearSelect').value = '';
+            document.getElementById('monthSelect').value = '';
+            document.getElementById('daySelect').value = '';
+            
+            checkAnalyzeButton();
+            
+            console.log('업로드 초기화 완료');
+        }
+
+        // 드래그 앤 드롭 기능
+        const uploadSection = document.getElementById('uploadSection');
+        
+        uploadSection.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadSection.classList.add('dragover');
+        });
+        
+        uploadSection.addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadSection.classList.remove('dragover');
+        });
+        
+        uploadSection.addEventListener('drop', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            uploadSection.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            console.log('드롭된 파일 수:', files.length);
+            
+            if (files.length > 0) {
+                const file = files[0];
+                
+                // 파일 타입 검증
+                if (!file.type.startsWith('image/')) {
+                    alert('이미지 파일만 업로드 가능합니다.');
+                    return;
+                }
+                
+                const fileInput = document.getElementById('imageUpload');
+                
+                // FileList 객체 생성
+                const dt = new DataTransfer();
+                dt.items.add(file);
+                fileInput.files = dt.files;
+                
+                // 수동으로 change 이벤트 발생
+                const event = new Event('change', { bubbles: true });
+                fileInput.dispatchEvent(event);
+            }
+        });
+
+        // 모바일 터치 이벤트 처리
+        uploadSection.addEventListener('touchstart', function(e) {
+            const fileInput = document.getElementById('imageUpload');
+            fileInput.click();
+        });
+
+        // 간단한 해시 함수 (이미지 데이터 기반)
+        function simpleHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash; // 32비트 정수로 변환
+            }
+            return Math.abs(hash);
+        }
+
+        // 전생 연인 분석 (제한 체크 포함)
+        function analyzeImage() {
+            // 테스트 가능 여부 확인
+            if (!canTest()) {
+                return;
+            }
+            
+            // 필수 정보 확인
+            if (!window.currentImageData) {
+                alert('사진을 먼저 업로드해주세요!');
+                return;
+            }
+            
+            const birthYear = document.getElementById('yearSelect').value;
+            const birthMonth = document.getElementById('monthSelect').value;
+            const birthDay = document.getElementById('daySelect').value;
+            
+            if (!birthYear || !birthMonth || !birthDay) {
+                alert('생년월일을 모두 입력해주세요!');
+                return;
+            }
+            
+            document.getElementById('loading').style.display = 'block';
+            document.querySelector('.upload-section').style.display = 'none';
+            document.querySelector('.input-section').style.display = 'none';
+            
+            // 테스트 횟수 및 시간 기록
+            const todayCount = getTodayTestCount() + 1;
+            saveTodayTestCount(todayCount);
+            lastTestTime = Date.now();
+            
+            setTimeout(() => {
+                // 이미지와 생년월일 기반으로 일관된 결과 생성
+                const selectedLover = getPastLoverFromData(
+                    window.currentImageData, 
+                    birthYear, 
+                    birthMonth, 
+                    birthDay
+                );
+                
+                document.getElementById('loverEmoji').textContent = selectedLover.emoji;
+                document.getElementById('loverName').textContent = selectedLover.name;
+                document.getElementById('loverEra').textContent = selectedLover.era;
+                document.getElementById('loverDescription').textContent = selectedLover.desc;
+                document.getElementById('loveStoryText').textContent = selectedLover.story;
+                document.getElementById('connectionScore').textContent = `💕 영혼 연결도: ${selectedLover.connection}%`;
+                
+                // 전생 인연 특징 표시
+                const compatibilityGrid = document.getElementById('compatibilityGrid');
+                compatibilityGrid.innerHTML = '';
+                selectedLover.compatibility.forEach(trait => {
+                    const item = document.createElement('div');
+                    item.className = 'compatibility-item';
+                    item.innerHTML = `
+                        <div class="compatibility-emoji">${trait.emoji}</div>
+                        <div class="compatibility-title">${trait.title}</div>
+                        <div class="compatibility-text">${trait.text}</div>
+                    `;
+                    compatibilityGrid.appendChild(item);
+                });
+                
+                // 결과를 전역 변수에 저장 (공유 기능을 위해)
+                window.currentLoverResult = selectedLover;
+                window.currentBirthInfo = { year: birthYear, month: birthMonth, day: birthDay };
+                
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('resultSection').style.display = 'block';
+                
+                // 테스트 횟수 표시 (5회 이상부터)
+                if (todayCount >= 5) {
+                    const countMessage = document.createElement('div');
+                    countMessage.style.cssText = `
+                        background: linear-gradient(45deg, #FFE0E6, #FFF0F5);
+                        padding: 0.5rem 1rem;
+                        border-radius: 15px;
+                        margin: 1rem 0;
+                        font-size: 0.9rem;
+                        color: #FF1493;
+                        border: 1px solid rgba(255,182,193,0.3);
+                    `;
+                    countMessage.innerHTML = `💕 오늘 ${todayCount}번째 분석! 정말 열심이네요! ✨`;
+                    
+                    const resultSection = document.getElementById('resultSection');
+                    resultSection.insertBefore(countMessage, resultSection.children[1]);
+                }
+                
+                document.getElementById('resultSection').scrollIntoView({behavior: 'smooth'});
+            }, 4000);
+        }
+
+        // 공유용 이미지 생성
+        function generateShareImage() {
+            if (!window.currentLoverResult) {
+                alert('먼저 전생 연인 분석을 완료해주세요!');
+                return null;
+            }
+
+            const canvas = document.getElementById('shareCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // 배경 그라디언트
+            const gradient = ctx.createLinearGradient(0, 0, 0, 800);
+            gradient.addColorStop(0, '#FF69B4');
+            gradient.addColorStop(0.5, '#FFB6C1');
+            gradient.addColorStop(1, '#FFC0CB');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 600, 800);
+            
+            // 반투명 흰색 배경
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+            roundRect(ctx, 50, 100, 500, 600, 20);
+            ctx.fill();
+            
+            // 제목
+            ctx.fillStyle = '#333';
+            ctx.font = 'bold 32px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('🔮 전생 연인 찾기', 300, 160);
+            
+            // 전생 연인 이모지
+            ctx.font = '120px Arial, sans-serif';
+            ctx.fillText(window.currentLoverResult.emoji, 300, 280);
+            
+            // 전생 연인 이름
+            ctx.fillStyle = '#FF1493';
+            ctx.font = 'bold 36px Arial, sans-serif';
+            ctx.fillText(window.currentLoverResult.name, 300, 350);
+            
+            // 시대
+            ctx.fillStyle = '#FF69B4';
+            ctx.font = '24px Arial, sans-serif';
+            ctx.fillText(window.currentLoverResult.era, 300, 390);
+            
+            // 설명
+            ctx.fillStyle = '#555';
+            ctx.font = '18px Arial, sans-serif';
+            ctx.textAlign = 'center';
+            const lines = wrapText(ctx, window.currentLoverResult.desc, 300, 430, 400, 25);
+            
+            // 영혼 연결도
+            if (window.currentLoverResult.connection) {
+                ctx.fillStyle = '#FF1493';
+                ctx.font = 'bold 28px Arial, sans-serif';
+                ctx.fillText(`💕 영혼 연결도: ${window.currentLoverResult.connection}%`, 300, 520);
+            }
+            
+            // 하단 URL
+            ctx.fillStyle = '#999';
+            ctx.font = '18px Arial, sans-serif';
+            ctx.fillText('🌟 전생 연인 찾기에서 더 많은 분석을!', 300, 650);
+            
+            return canvas.toDataURL('image/png');
+        }
+
+        // 텍스트 줄바꿈 함수
+        function wrapText(context, text, x, y, maxWidth, lineHeight) {
+            const words = text.split(' ');
+            let line = '';
+            let lines = [];
+            
+            for (let n = 0; n < words.length; n++) {
+                const testLine = line + words[n] + ' ';
+                const metrics = context.measureText(testLine);
+                const testWidth = metrics.width;
+                
+                if (testWidth > maxWidth && n > 0) {
+                    lines.push(line);
+                    line = words[n] + ' ';
+                } else {
+                    line = testLine;
+                }
+            }
+            lines.push(line);
+            
+            // 실제 텍스트 그리기
+            for (let i = 0; i < lines.length; i++) {
+                context.fillText(lines[i], x, y + (i * lineHeight));
+            }
+            
+            return lines;
+        }
+
+        // Canvas RoundRect Polyfill
+        function roundRect(ctx, x, y, w, h, r) {
+            if (w < 2 * r) r = w / 2;
+            if (h < 2 * r) r = h / 2;
+            ctx.beginPath();
+            ctx.moveTo(x + r, y);
+            ctx.arcTo(x + w, y, x + w, y + h, r);
+            ctx.arcTo(x + w, y + h, x, y + h, r);
+            ctx.arcTo(x, y + h, x, y, r);
+            ctx.arcTo(x, y, x + w, y, r);
+            ctx.closePath();
+            return ctx;
+        }
+
+        // 카카오톡 공유
+        function shareToKakao() {
+            console.log('카카오톡 공유 시작');
+            
+            if (!window.currentLoverResult) {
+                alert('먼저 전생 연인 분석을 완료해주세요!');
+                return;
+            }
+
+            const shareText = `🔮 전생 연인 찾기 결과!\n\n${window.currentLoverResult.emoji} ${window.currentLoverResult.name}\n${window.currentLoverResult.era}\n\n💕 영혼 연결도: ${window.currentLoverResult.connection}%\n\n나도 분석해보기: ${window.location.href}`;
+            
+            // 카카오 SDK 확인
+            if (typeof Kakao !== 'undefined' && Kakao.isInitialized && Kakao.isInitialized()) {
+                try {
+                    Kakao.Share.sendDefault({
+                        objectType: 'feed',
+                        content: {
+                            title: '🔮 전생 연인 찾기 결과!',
+                            description: `${window.currentLoverResult.emoji} ${window.currentLoverResult.name} (${window.currentLoverResult.era})\n💕 영혼 연결도: ${window.currentLoverResult.connection}%`,
+                            imageUrl: 'https://your-domain.com/pastlover-og.jpg',
+                            link: {
+                                mobileWebUrl: window.location.href,
+                                webUrl: window.location.href,
+                            },
+                        },
+                        buttons: [
+                            {
+                                title: '나도 분석하기',
+                                link: {
+                                    mobileWebUrl: window.location.href,
+                                    webUrl: window.location.href,
+                                },
+                            },
+                        ],
+                    });
+                } catch (error) {
+                    console.error('카카오 SDK 에러:', error);
+                    fallbackKakaoShare(shareText);
+                }
+            } else {
+                fallbackKakaoShare(shareText);
+            }
+        }
+
+        // 카카오톡 폴백 공유
+        function fallbackKakaoShare(shareText) {
+            // 모바일에서 카카오톡 앱으로 직접 공유 시도
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                try {
+                    const kakaoUrl = `kakaotalk://share/text?text=${encodeURIComponent(shareText)}`;
+                    window.location.href = kakaoUrl;
+                    
+                    setTimeout(() => {
+                        if (navigator.share) {
+                            navigator.share({
+                                title: '🔮 전생 연인 찾기',
+                                text: shareText,
+                                url: window.location.href
+                            }).catch(error => {
+                                copyToClipboard(shareText);
+                            });
+                        } else {
+                            copyToClipboard(shareText);
+                        }
+                    }, 3000);
+                } catch (error) {
+                    copyToClipboard(shareText);
+                }
+            } else {
+                copyToClipboard(shareText);
+            }
+        }
+
+        // 인스타그램 공유
+        function shareToInstagram() {
+            if (!window.currentLoverResult) {
+                alert('먼저 전생 연인 분석을 완료해주세요!');
+                return;
+            }
+            
+            const shareImageData = generateShareImage();
+            if (!shareImageData) return;
+            
+            const link = document.createElement('a');
+            link.download = `전생연인테스트_${window.currentLoverResult.name.replace(' ', '_')}.png`;
+            link.href = shareImageData;
+            
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                link.click();
+                setTimeout(() => {
+                    const instagramUrl = 'instagram://camera';
+                    window.location.href = instagramUrl;
+                    
+                    setTimeout(() => {
+                        window.open('https://www.instagram.com/', '_blank');
+                    }, 2000);
+                }, 3000);
+            } else {
+                link.click();
+                window.open('https://www.instagram.com/', '_blank');
+                alert('이미지가 다운로드되었습니다!\n인스타그램에서 업로드해보세요 📷');
+            }
+        }
+
+        // 페이스북 공유
+        function shareToFacebook() {
+            if (!window.currentLoverResult) {
+                alert('먼저 전생 연인 분석을 완료해주세요!');
+                return;
+            }
+
+            const shareUrl = encodeURIComponent(window.location.href);
+            const shareText = encodeURIComponent(`🔮 전생 연인 찾기에서 ${window.currentLoverResult.emoji} ${window.currentLoverResult.name}이 나왔어요! 영혼 연결도 ${window.currentLoverResult.connection}%`);
+            
+            const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}&quote=${shareText}`;
+            window.open(facebookUrl, '_blank', 'width=600,height=400');
+        }
+
+        // 트위터 공유
+        function shareToTwitter() {
+            if (!window.currentLoverResult) {
+                alert('먼저 전생 연인 분석을 완료해주세요!');
+                return;
+            }
+
+            const shareText = encodeURIComponent(`🔮 전생 연인 찾기 결과: ${window.currentLoverResult.emoji} ${window.currentLoverResult.name}! 영혼 연결도 ${window.currentLoverResult.connection}% ✨`);
+            const shareUrl = encodeURIComponent(window.location.href);
+            const hashtags = encodeURIComponent('전생연인,운명의인연,소울메이트,AI분석');
+            
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}&hashtags=${hashtags}`;
+            window.open(twitterUrl, '_blank', 'width=600,height=400');
+        }
+
+        // 일반 공유 (링크 복사)
+        function shareGeneral() {
+            if (!window.currentLoverResult) {
+                alert('먼저 전생 연인 분석을 완료해주세요!');
+                return;
+            }
+
+            const shareText = `🔮 전생 연인 찾기 결과!\n\n${window.currentLoverResult.emoji} ${window.currentLoverResult.name}\n${window.currentLoverResult.era}\n\n${window.currentLoverResult.desc}\n\n💕 영혼 연결도: ${window.currentLoverResult.connection}%\n\n나도 분석해보기: ${window.location.href}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: '🔮 전생 연인 찾기',
+                    text: shareText,
+                    url: window.location.href
+                }).catch(error => {
+                    copyToClipboard(shareText);
+                });
+            } else {
+                copyToClipboard(shareText);
+            }
+        }
+
+        // 클립보드에 복사
+        function copyToClipboard(text) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('💕 전생 연인 분석 결과가 복사되었습니다!\n\n원하는 곳에 붙여넣기해서 공유해보세요! ✨');
+                }).catch(error => {
+                    fallbackCopyToClipboard(text);
+                });
+            } else {
+                fallbackCopyToClipboard(text);
+            }
+        }
+
+        // 클립보드 복사 폴백
+        function fallbackCopyToClipboard(text) {
+            try {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                textArea.style.top = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                
+                const successful = document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                if (successful) {
+                    alert('💕 전생 연인 분석 결과가 복사되었습니다!\n\n원하는 곳에 붙여넣기해서 공유해보세요! ✨');
+                } else {
+                    alert('복사에 실패했습니다. 수동으로 선택해서 복사해주세요.');
+                }
+            } catch (error) {
+                alert('복사에 실패했습니다. 수동으로 선택해서 복사해주세요.');
+            }
+        }
+
+        function retakeTest() {
+            document.getElementById('resultSection').style.display = 'none';
+            document.querySelector('.upload-section').style.display = 'block';
+            document.querySelector('.input-section').style.display = 'block';
+            resetUpload();
+            
+            // 저장된 데이터 초기화
+            window.currentImageData = null;
+            window.currentLoverResult = null;
+            window.currentBirthInfo = null;
+        }
+
+        function saveResult() {
+            if (!window.currentLoverResult) {
+                alert('저장할 결과가 없습니다!');
+                return;
+            }
+            
+            const resultData = {
+                lover: window.currentLoverResult,
+                birthInfo: window.currentBirthInfo,
+                timestamp: new Date().toISOString(),
+                url: window.location.href
+            };
+            
+            try {
+                localStorage.setItem('pastLoverTestResult', JSON.stringify(resultData));
+                alert('결과가 저장되었습니다! 💾\n\n언제든 다시 확인할 수 있어요.');
+            } catch (e) {
+                alert('결과 저장에 실패했습니다. 스크린샷으로 저장해보세요! 📷');
+            }
+        }
+
+        function scrollToUpload() {
+            document.querySelector('.upload-section').scrollIntoView({behavior: 'smooth'});
+        }
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', function() {
+            initDateSelectors();
+        });
+    </script>
+</body>
 </html>
