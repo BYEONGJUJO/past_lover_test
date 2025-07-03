@@ -1526,6 +1526,14 @@
             return ctx;
         }
 
+        // 공유 버튼에 추적 추가
+        function shareToKakao() {
+            gtag('event', 'share_attempt', {
+                event_category: 'social',
+                event_label: 'kakao_share',
+                method: 'kakao'
+            });
+            
         // 카카오톡 공유
         function shareToKakao() {
             console.log('카카오톡 공유 시작');
