@@ -29,6 +29,9 @@
 
     <!-- 카카오 SDK -->
     <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js"></script>
+
+    <!-- Kakao AdFit -->
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     
     <style>
         * {
@@ -868,23 +871,22 @@
                 </div>
             </div>
         </div>
-
-        <ins class="kakao_ad_area" style="display:none;"
-        data-ad-unit = "DAN-4FnyL5fNvyx0e4QY"
-        data-ad-width = "728"
-        data-ad-height = "90"></ins>
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-        
-        <ins ...
-         data-ad-onfail   = "callBackFunc" // NO-AD시 실행될 Callback 함수명
-         ... ></ins>
-        
-        <script type="text/javascript">
-         function callBackFunc(arg1) {
-           /*
-            * TODO: 기능 구현
-            */
-         }
+   
+        <!-- Kakao AdFit 중단 광고 -->
+        <div class="ad-block">
+          <ins class="kakao_ad_area" style="display:none;"
+            data-ad-unit="DAN-4FnyL5fNvyx0e4QY"
+            data-ad-width="728"
+            data-ad-height="90"
+            data-ad-onfail="callBackFunc"></ins>
+        </div>
+    
+        <script>
+          function callBackFunc(reason) {
+            const fallback = document.createElement('div');
+            fallback.innerHTML = '<p style="text-align:center; color:#aaa;">광고를 불러올 수 없습니다.</p>';
+            document.querySelector('.kakao_ad_area').replaceWith(fallback);
+          }
         </script>
 
         <!-- 업로드 섹션 -->
