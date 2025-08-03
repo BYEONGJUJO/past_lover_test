@@ -363,6 +363,20 @@
             line-height: 1.5;
             margin-top: 1rem;
         }
+
+        .horizontal-ads {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: nowrap; /* ✅ 줄바꿈 방지 */
+            margin: 2rem 0;
+        }
+
+        .horizontal-ad-item {
+            flex: 0 0 250px;
+            height: 250px;
+            background: #f9f9f9;
+        }
         
         .upload-section {
             background: rgba(255,255,255,0.95);
@@ -881,12 +895,54 @@
             data-ad-onfail="callBackFunc"></ins>
         </div>
     
+        <!-- 광고 영역 컨테이너 -->
+        <div class="horizontal-ads">
+            <div class="horizontal-ad-item">
+                <ins class="kakao_ad_area" style="display:none;"
+                    data-ad-unit="DAN-qmW8mSNW7sF9GH7A"
+                    data-ad-width="250"
+                    data-ad-height="250"
+                    data-ad-onfail="callBackFunc"></ins>
+            </div>
+
+            <div class="horizontal-ad-item">
+                <ins class="kakao_ad_area" style="display:none;"
+                    data-ad-unit="DAN-OwajxxKs0yJHwZBb"
+                    data-ad-width="250"
+                    data-ad-height="250"
+                    data-ad-onfail="callBackFunc"></ins>
+            </div>
+
+            <div class="horizontal-ad-item">
+                <ins class="kakao_ad_area" style="display:none;"
+                    data-ad-unit="DAN-bhRgxMwjEIOXm3Dm"
+                    data-ad-width="250"
+                    data-ad-height="250"
+                    data-ad-onfail="callBackFunc"></ins>
+            </div>
+        </div>
+
+        <!-- 광고 표시 초기화 스크립트 -->
         <script>
-          function callBackFunc(reason) {
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const kakaoAds = document.querySelectorAll('.kakao_ad_area');
+                kakaoAds.forEach((ad, index) => {
+                 ad.style.display = 'block';
+                console.log(`카카오 광고 ${index + 1} 로드 시도`);
+                });
+            }, 2000);
+        });
+
+
+        // 광고 실패 시 대체 콘텐츠
+        function callBackFunc(reason) {
             const fallback = document.createElement('div');
             fallback.innerHTML = '<p style="text-align:center; color:#aaa;">광고를 불러올 수 없습니다.</p>';
-            document.querySelector('.kakao_ad_area').replaceWith(fallback);
-          }
+            document.querySelectorAll('.kakao_ad_area').forEach(ad => {
+                ad.replaceWith(fallback.cloneNode(true));
+            });
+        }
         </script>
 
         <!-- 업로드 섹션 -->
