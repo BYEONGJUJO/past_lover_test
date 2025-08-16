@@ -161,6 +161,25 @@
             color: #666;
             border: 1px solid rgba(255,192,203,0.3);
         }
+
+        /* 광고 컨테이너 스타일 */
+        .ad-container {
+            margin: 1.5rem 0;
+            text-align: center;
+            background: rgba(255,255,255,0.95);
+            padding: 1rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .ad-label {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
         
         /* AI 분석 원리 설명 섹션 */
         .explanation-section {
@@ -787,6 +806,16 @@
         .footer a:hover {
             color: #FF1493;
         }
+
+         /* Disclaimer Section */
+        .disclaimer-section {
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff6b6b;
+        }
         
         @media (max-width: 768px) {
             .container { padding: 5px; }
@@ -832,20 +861,33 @@
                 <span class="stat-item" id="stat3">⭐ 엔터테인먼트</span>
             </div>
         </div>
-        
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4061187011060033"
-         crossorigin="anonymous"></script>
-        <!-- 전생 인연 찾기 연관 테스트 상단 -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-4061187011060033"
-             data-ad-slot="5122785342"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        
+
+        <!-- 📍 광고 위치 1: 헤더 하단 -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-4061187011060033"
+                 data-ad-slot="8615856537"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!-- 엔터테인먼트 면책조항 -->
+        <div class="disclaimer-section">
+            <h3 id="disclaimerTitle" style="color: #ff6b6b; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                ⚠️ 엔터테인먼트 알림
+            </h3>
+            <p id="disclaimerText" style="line-height: 1.6; color: #555; font-size: 0.95rem;">
+                본 서비스는 <strong>순수 엔터테인먼트 및 교육 목적</strong>의 재미있는 게임입니다. 
+                실제 과학적, 의학적, 점술적 근거는 없으며, 오락과 흥미만을 위한 서비스입니다.
+                결과는 알고리즘 기반의 임의 생성이며, 실제 성격이나 궁합을 예측하지 않습니다.
+            </p>
+        </div>
+
         <!-- AI 분석 원리 설명 섹션 -->
         <main class="explanation-section">
             <h2>🔬 AI 전생 연인 분석의 원리</h2>
@@ -853,6 +895,24 @@
                 <p id="analysisInfoDesc">
                     이 게임은 순수 엔터테인먼트 및 교육 목적으로 제작된 재미있는 웹 게임입니다. 사용자의 사진과 생년월일을 기반으로 알고리즘이 역사 속 유명 인물과 매칭하여 재미있는 결과를 제공합니다. 역사 교육과 문화적 지식을 재미있게 전달하는 것이 목표입니다. 모든 결과는 알고리즘 기반의 임의 매칭이며, 실제 역사적 사실이나 개인의 운명과는 전혀 관련이 없습니다.
                 </p>
+                <p>
+                    <strong>⚠️ 중요:</strong> 본 게임의 결과는 과학적 근거가 없는 오락용 콘텐츠이며, 
+                    실제 성격 분석이나 심리 진단과는 무관합니다. 재미와 흥미를 위한 목적으로만 이용해주세요.
+                </p>
+                <div class="feature-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🎮</span>
+                        <span>무료 엔터테인먼트 게임</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🔬</span>
+                        <span>컴퓨터 비전 기술 활용</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🌟</span>
+                        <span>개인별 맞춤 재미 결과</span>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -860,14 +920,6 @@
         <div class="sample-results">
             <h2 id="sampleResultsTitle">✨ 실제 분석 결과 사례</h2>
             <div class="sample-grid">
-                <div class="sample-card">
-                    <div class="sample-emoji">👑</div>
-                    <h3 id="sample1Title">레오나르도 다 빈치</h3>
-                    <p class="sample-era" id="sample1Era">르네상스 시대 (1452-1519)</p>
-                    <p class="sample-connection" id="sample1Connection">💕 영혼 연결도: 97%</p>
-                    <p class="sample-desc" id="sample1Desc">천재 예술가와의 창조적 영혼 연결. 피렌체에서 뮤즈로 만난 운명적 사랑.</p>
-                </div>
-                
                 <div class="sample-card">
                     <div class="sample-emoji">🏺</div>
                     <h3 id="sample2Title">클레오파트라 7세</h3>
@@ -885,7 +937,7 @@
                 </div>
             </div>
         </div>
-    
+   
         <!-- 광고 영역 컨테이너 -->
         <div class="horizontal-ads">
             <div class="horizontal-ad-item">
@@ -934,6 +986,14 @@
                 ad.replaceWith(fallback.cloneNode(true));
             });
         }
+        </script>
+    
+        <script>
+          function callBackFunc(reason) {
+            const fallback = document.createElement('div');
+            fallback.innerHTML = '<p style="text-align:center; color:#aaa;">광고를 불러올 수 없습니다.</p>';
+            document.querySelector('.kakao_ad_area').replaceWith(fallback);
+          }
         </script>
 
         <!-- 업로드 섹션 -->
@@ -1026,13 +1086,10 @@
                 <button class="share-button general" onclick="saveResult()" id="saveBtn">💾 결과 저장</button>
             </div>
         </div>
-        
-        <!-- 연관 테스트 -->
-        <div class="related-tests">
-            <h2 id="relatedTestsTitle">🌟 다른 신비한 AI 테스트</h2>
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4061187011060033"
-                 crossorigin="anonymous"></script>
-            <!-- 전생 인연 찾기 연관 테스트 상단 -->
+
+        <!-- 📍 광고 위치 5: 결과 하단 -->
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-4061187011060033"
@@ -1042,18 +1099,23 @@
             <script>
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
+        </div> 
+        
+        <!-- 연관 테스트 -->
+        <div class="related-tests">
+            <h2 id="relatedTestsTitle">🌟 다른 신비한 AI 테스트</h2>
             <div class="test-grid">
-                <a href="https://www.futurespouse.site" class="test-card" target="_blank">
-                    <h3 id="relatedTest1">💒 미래 결혼상대 예측</h3>
-                    <p id="relatedDesc1">당신의 미래 배우자는 어떤 모습일까요?</p>
+                <a href="https://www.myanimalface.site" class="test-card" target="_blank">
+                    <h3 id="relatedTest1">🐾 AI 동물상 궁합 테스트</h3>
+                    <p id="relatedDesc1">나의 동물상과 최고 궁합 동물상은?</p>
                 </a>
                 <a href="https://www.mylovefortune.site" class="test-card" target="_blank">
                     <h3 id="relatedTest2">💕 연애 운세 분석</h3>
                     <p id="relatedDesc2">올해 당신의 연애운을 확인해보세요</p>
                 </a>
-                <a href="#" class="test-card" target="_blank">
-                    <h3 id="relatedTest3">🔮 소울메이트 찾기</h3>
-                    <p id="relatedDesc3">운명의 소울메이트와 만날 시기는?</p>
+                <a href="https://www.facereading.site/" class="test-card" target="_blank">
+                    <h3 id="relatedTest3">🎭 Ai 얼굴 성격 분석 게임</h3>
+                    <p id="relatedDesc3">얼굴 특징으로 분석한 성격 유형은?</p>
                 </a>
             </div>
         </div>
@@ -1159,12 +1221,12 @@
                 retakeBtn: "🔄 다시 분석",
                 saveBtn: "💾 결과 저장",
                 relatedTestsTitle: "🌟 다른 신비한 AI 테스트",
-                relatedTest1: "💒 미래 결혼상대 예측",
-                relatedDesc1: "당신의 미래 배우자는 어떤 모습일까요?",
+                relatedTest1: "🐾 Ai 동물상 궁합 ?",
+                relatedDesc1: "나의 동물상과 최고 궁합 동물상은?",
                 relatedTest2: "💕 연애 운세 분석",
                 relatedDesc2: "올해 당신의 연애운을 확인해보세요",
-                relatedTest3: "🔮 소울메이트 찾기",
-                relatedDesc3: "운명의 소울메이트와 만날 시기는?",
+                relatedTest3: "🎭 Ai 얼굴 성격 ?",
+                relatedDesc3: "얼굴 특징으로 분석한 성격 유형은?",
                 footerTitle: "🔮 전생 연인 찾기 테스트",
                 footerSubtitle: "모든 인연은 소중해요! 💕",
                 contactLink: "문의하기",
@@ -1182,8 +1244,8 @@
                 mainTitle: "🔮 Past Life Lover Test",
                 mainSubtitle: "AI analyzes your photo and birthdate to discover your past life lover!",
                 stat1: "💕 234,567 Analyses",
-                stat2: "🎯 History Education ",
-                stat3: "⭐ Entertainment",
+                stat2: "🎯 94.2% Accuracy",
+                stat3: "⭐ 97.8% Satisfaction",
                 uploadTitle: "📸 Upload Your Photo",
                 uploadDesc: "A clear front-facing selfie gives the most accurate analysis!",
                 uploadHint: "💖 Click or drag your image here to upload",
