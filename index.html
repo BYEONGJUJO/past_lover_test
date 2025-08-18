@@ -853,6 +853,23 @@
             }
         }
     </style>
+
+    
+  <!-- 초기 JSON-LD (Fallback) -->
+  <script type="application/ld+json" id="pl-jsonld">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"오늘의 핫키워드 × 전생 인물 매칭",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"손흥민","url":"https://www.pastlifelover.site/topic/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"},
+      {"@type":"ListItem","position":2,"name":"조국","url":"https://www.pastlifelover.site/topic/%EC%9A%B0%EC%A3%BC"},
+      {"@type":"ListItem","position":3,"name":"장원영","url":"https://www.pastlifelover.site/topic/%ED%8C%A8%EC%85%98"},
+      {"@type":"ListItem","position":4,"name":"이찬원","url":"https://www.pastlifelover.site/topic/%EC%97%AC%ED%96%89"},
+      {"@type":"ListItem","position":5,"name":"아이유","url":"https://www.pastlifelover.site/topic/%EA%B1%B4%EA%B0%95"}
+    ]
+  }
+  </script>
     
 </head>
 <body>
@@ -949,6 +966,55 @@
                 </div>
             </div>
         </div>
+
+         <!-- 🔥 트렌드 × 전생 인물 위젯 -->
+    <section id="pl-trends" class="card" aria-labelledby="pl-trends-title">
+      <h2 id="pl-trends-title">🔥 오늘의 핫키워드 × 전생 인물 매칭</h2>
+      <p class="pl-lead">오늘 화제가 된 키워드를 전생·역사 인물에 빗대어 가볍게 설명합니다. (엔터테인먼트용)</p>
+
+      <!-- Fallback 리스트 (서버 데이터 없을 때도 SEO 유지) -->
+      <ol class="pl-list" id="pl-list" itemscope itemtype="https://schema.org/ItemList">
+        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="position" content="1"/>
+          <a href="/topic/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5" class="pl-link" itemprop="url">
+            <span itemprop="name">인공지능</span>
+          </a>
+          <p class="pl-explain">전생에 <strong>레오나르도 다 빈치</strong>형 — 창조/탐구 성향!</p>
+        </li>
+        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="position" content="2"/>
+          <a href="/topic/%EC%9A%B0%EC%A3%BC" class="pl-link" itemprop="url">
+            <span itemprop="name">우주</span>
+          </a>
+          <p class="pl-explain">전생에 <strong>갈릴레이</strong>형 — 진실 탐구 기질.</p>
+        </li>
+        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="position" content="3"/>
+          <a href="/topic/%ED%8C%A8%EC%85%98" class="pl-link" itemprop="url">
+            <span itemprop="name">패션</span>
+          </a>
+          <p class="pl-explain">전생에 <strong>클레오파트라</strong>형 — 미감/존재감!</p>
+        </li>
+        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="position" content="4"/>
+          <a href="/topic/%EC%97%AC%ED%96%89" class="pl-link" itemprop="url">
+            <span itemprop="name">여행</span>
+          </a>
+          <p class="pl-explain">전생에 <strong>마르코 폴로</strong>형 — 모험/만남 타입.</p>
+        </li>
+        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="position" content="5"/>
+          <a href="/topic/%EA%B1%B4%EA%B0%95" class="pl-link" itemprop="url">
+            <span itemprop="name">건강</span>
+          </a>
+          <p class="pl-explain">전생에 <strong>히포크라테스</strong>형 — 균형/치유 중시.</p>
+        </li>
+      </ol>
+
+      <div class="pl-cta">
+        <a class="pl-btn" href="/">🔮 내 전생 인연 바로 찾기</a>
+      </div>
+    </section>
    
         <!-- 광고 영역 컨테이너 -->
         <div class="horizontal-ads">
