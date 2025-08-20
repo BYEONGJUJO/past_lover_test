@@ -9,7 +9,7 @@
     
     <!-- Open Graph -->
     <meta property="og:title" content="🔮 전생 연인 찾기 - AI가 찾아주는 운명의 인연" id="ogTitle">
-    <meta property="og:description" content="오늘의 핫 피플 × 전생 인물 매칭" id="ogDescription">
+    <meta property="og:description" content="사진과 생년월일로 당신의 전생 연인을 찾아드립니다!" id="ogDescription">
     <meta property="og:image" content="https://your-domain.com/pastlife-og.jpg">
     <meta property="og:url" content="https://your-domain.com">
     
@@ -32,6 +32,16 @@
 
     <!-- Kakao AdFit -->
     <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+    <!-- JSON-LD 구조화 데이터 -->
+    <script type="application/ld+json" id="trendsJsonLd">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "오늘의 핫키워드 × 전생 인물 매칭",
+        "itemListElement": []
+    }
+    </script>
     
     <style>
         * {
@@ -161,6 +171,114 @@
             color: #666;
             border: 1px solid rgba(255,192,203,0.3);
         }
+
+         /* 🔥 핫키워드 섹션 - 헤더 바로 아래 추가 */
+        .trends-section {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            margin: 1rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,105,180,0.1);
+        }
+
+        .trends-title {
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: #FF1493;
+            text-align: center;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .trends-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .trends-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .trend-card {
+            background: linear-gradient(45deg, #FFF8DC, #F0F8FF, #FFE4E1);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,182,193,0.3);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .trend-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(45deg, #FF69B4, #FFD700);
+        }
+
+        .trend-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.2);
+        }
+
+        .trend-rank {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: linear-gradient(45deg, #FF69B4, #FFB6C1);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .trend-emoji {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .trend-keyword {
+            color: #FF1493;
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+
+        .trend-persona {
+            color: #FF69B4;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .trend-desc {
+            color: #666;
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .trends-update {
+            text-align: center;
+            color: #999;
+            font-size: 0.8rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 1px solid rgba(255,182,193,0.2);
+        }
+
 
         /* 광고 컨테이너 스타일 */
         .ad-container {
@@ -296,7 +414,93 @@
             margin-top: 1rem;
         }
 
-       
+        /* 샘플 결과 카드 섹션 */
+        .sample-results {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .sample-results h2 {
+            color: #FF1493;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        .sample-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .sample-card {
+            background: linear-gradient(45deg, #FFF8DC, #F0F8FF, #FFE4E1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,182,193,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sample-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(45deg, #FF69B4, #FFD700, #FF1493);
+        }
+
+        .sample-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 105, 180, 0.2);
+        }
+
+        .sample-avatar {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: gentle-bounce 3s ease-in-out infinite;
+        }
+
+        .sample-card h3 {
+            color: #FF1493;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .sample-job {
+            color: #FF69B4;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .sample-match {
+            background: linear-gradient(45deg, #FF69B4, #FFD700);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin: 1rem 0;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .sample-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 1rem;
+        }
+
         .horizontal-ads {
             display: flex;
             justify-content: center;
@@ -756,42 +960,6 @@
             }
         }
     </style>
-
-    <style>
-    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,Helvetica,Arial,sans-serif;background:#faf7ff;color:#222}
-    .container{max-width:860px;margin:0 auto;padding:20px}
-    .card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 10px 26px rgba(0,0,0,.06);margin:18px 0}
-    h1{margin:0 0 4px;color:#c0147a} .lead{color:#666;line-height:1.7}
-    /* 트렌드 위젯 */
-    #pl-trends-title{margin:0 0 6px;color:#a5007c;font-size:clamp(18px,3.5vw,24px)}
-    .pl-lead{color:#666;margin:6px 0 12px}
-    .pl-list{list-style:decimal;padding-left:18px;margin:0}
-    .pl-item{margin:10px 0 14px}
-    .pl-link{font-weight:700;text-decoration:none;color:#7b1fa2}
-    .pl-link:hover{text-decoration:underline}
-    .pl-explain{margin:6px 0 0;color:#444}
-    .pl-cta{display:flex;justify-content:flex-end}
-    .pl-btn{display:inline-block;background:#ff4da6;color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none}
-    footer{font-size:13px;color:#888;text-align:center;margin:20px 0}
-   </style>
-
-    
-  <!-- 초기 JSON-LD (Fallback) -->
-  <script type="application/ld+json" id="pl-jsonld">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "name":"오늘의 핫키워드 × 전생 인물 매칭",
-    "itemListElement":[
-      {"@type":"ListItem","position":1,"name":"손흥민","url":"https://www.pastlifelover.site/topic/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5"},
-      {"@type":"ListItem","position":2,"name":"조국","url":"https://www.pastlifelover.site/topic/%EC%9A%B0%EC%A3%BC"},
-      {"@type":"ListItem","position":3,"name":"장원영","url":"https://www.pastlifelover.site/topic/%ED%8C%A8%EC%85%98"},
-      {"@type":"ListItem","position":4,"name":"이찬원","url":"https://www.pastlifelover.site/topic/%EC%97%AC%ED%96%89"},
-      {"@type":"ListItem","position":5,"name":"아이유","url":"https://www.pastlifelover.site/topic/%EA%B1%B4%EA%B0%95"}
-    ]
-  }
-  </script>
-    
 </head>
 <body>
     <!-- 언어 전환 버튼 -->
@@ -812,6 +980,62 @@
             </div>
         </div>
 
+        <!-- 🔥 핫키워드 × 전생 인물 섹션 (헤더 바로 아래) -->
+        <section class="trends-section" itemscope itemtype="https://schema.org/ItemList">
+            <h2 class="trends-title">🔥 오늘의 핫키워드 × 전생 인물 매칭</h2>
+            <p class="trends-subtitle">오늘 화제가 된 키워드를 전생·역사 인물에 빗대어 가볍게 설명합니다. (엔터테인먼트용)</p>
+            
+            <div class="trends-grid" id="trendsGrid">
+                <!-- 기본 트렌드 표시 (6개) -->
+                <div class="trend-card">
+                    <div class="trend-rank">#1</div>
+                    <div class="trend-emoji">🎨</div>
+                    <div class="trend-keyword">인공지능</div>
+                    <div class="trend-persona">전생에 <strong>레오나르도 다 빈치</strong>형</div>
+                    <div class="trend-desc">창조/탐구 성향과 결이 맞는 키워드예요!</div>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-rank">#2</div>
+                    <div class="trend-emoji">🔭</div>
+                    <div class="trend-keyword">우주</div>
+                    <div class="trend-persona">전생에 <strong>갈릴레이</strong>형</div>
+                    <div class="trend-desc">진리 탐구 성향과 결이 맞는 키워드예요!</div>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-rank">#3</div>
+                    <div class="trend-emoji">👑</div>
+                    <div class="trend-keyword">패션</div>
+                    <div class="trend-persona">전생에 <strong>클레오파트라</strong>형</div>
+                    <div class="trend-desc">카리스마/리더십과 결이 맞는 키워드예요!</div>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-rank">#4</div>
+                    <div class="trend-emoji">🧭</div>
+                    <div class="trend-keyword">여행</div>
+                    <div class="trend-persona">전생에 <strong>마르코 폴로</strong>형</div>
+                    <div class="trend-desc">모험/탐험 정신과 결이 맞는 키워드예요!</div>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-rank">#5</div>
+                    <div class="trend-emoji">📚</div>
+                    <div class="trend-keyword">웹툰</div>
+                    <div class="trend-persona">전생에 <strong>셰익스피어</strong>형</div>
+                    <div class="trend-desc">예술적 감성과 결이 맞는 키워드예요!</div>
+                </div>
+                <div class="trend-card">
+                    <div class="trend-rank">#6</div>
+                    <div class="trend-emoji">⚕️</div>
+                    <div class="trend-keyword">건강</div>
+                    <div class="trend-persona">전생에 <strong>히포크라테스</strong>형</div>
+                    <div class="trend-desc">치유/돌봄과 결이 맞는 키워드예요!</div>
+                </div>
+            </div>
+            
+            <div class="trends-update" id="trendsUpdate">
+                실시간 업데이트
+            </div>
+        </section>
+        
         <!-- 📍 광고 위치 1: 헤더 하단 -->
         <div class="ad-container">
             <div class="ad-label">Advertisement</div>
@@ -887,55 +1111,6 @@
                 </div>
             </div>
         </div>
-
-         <!-- 🔥 트렌드 × 전생 인물 위젯 -->
-    <section id="pl-trends" class="card" aria-labelledby="pl-trends-title">
-      <h2 id="pl-trends-title">🔥 오늘의 핫키워드 × 전생 인물 매칭</h2>
-      <p class="pl-lead">오늘 화제가 된 키워드를 전생·역사 인물에 빗대어 가볍게 설명합니다. (엔터테인먼트용)</p>
-
-      <!-- Fallback 리스트 (서버 데이터 없을 때도 SEO 유지) -->
-      <ol class="pl-list" id="pl-list" itemscope itemtype="https://schema.org/ItemList">
-        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <meta itemprop="position" content="1"/>
-          <a href="/topic/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5" class="pl-link" itemprop="url">
-            <span itemprop="name">인공지능</span>
-          </a>
-          <p class="pl-explain">전생에 <strong>레오나르도 다 빈치</strong>형 — 창조/탐구 성향!</p>
-        </li>
-        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <meta itemprop="position" content="2"/>
-          <a href="/topic/%EC%9A%B0%EC%A3%BC" class="pl-link" itemprop="url">
-            <span itemprop="name">우주</span>
-          </a>
-          <p class="pl-explain">전생에 <strong>갈릴레이</strong>형 — 진실 탐구 기질.</p>
-        </li>
-        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <meta itemprop="position" content="3"/>
-          <a href="/topic/%ED%8C%A8%EC%85%98" class="pl-link" itemprop="url">
-            <span itemprop="name">패션</span>
-          </a>
-          <p class="pl-explain">전생에 <strong>클레오파트라</strong>형 — 미감/존재감!</p>
-        </li>
-        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <meta itemprop="position" content="4"/>
-          <a href="/topic/%EC%97%AC%ED%96%89" class="pl-link" itemprop="url">
-            <span itemprop="name">여행</span>
-          </a>
-          <p class="pl-explain">전생에 <strong>마르코 폴로</strong>형 — 모험/만남 타입.</p>
-        </li>
-        <li class="pl-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <meta itemprop="position" content="5"/>
-          <a href="/topic/%EA%B1%B4%EA%B0%95" class="pl-link" itemprop="url">
-            <span itemprop="name">건강</span>
-          </a>
-          <p class="pl-explain">전생에 <strong>히포크라테스</strong>형 — 균형/치유 중시.</p>
-        </li>
-      </ol>
-
-      <div class="pl-cta">
-        <a class="pl-btn" href="/">🔮 내 전생 인연 바로 찾기</a>
-      </div>
-    </section>
    
         <!-- 광고 영역 컨테이너 -->
         <div class="horizontal-ads">
